@@ -1,5 +1,6 @@
 from faker import Faker
 from uuid import uuid4
+import random
 
 fake = Faker(locale="en_US")
 
@@ -70,4 +71,29 @@ class DataGenerator:
         }
         return user_data
 
+    def generate_random_params_for_get_movies(self):
+        min_prise = self.generate_random_prise()
+        params = {
+            "pageSize": self.generate_random_page_size(),
+            "page": self.generate_random_page_size(),
+            "minPrice": min_prise,
+            "maxPrice": min_prise + random.randrange(1, 1000),
+            "locations": self.generate_location(),
+            "published": self.generete_published(),
+            "genreId": self.generate_random_id(),
+            "createdAt": self.generate_random_created_at()
+        }
+        return params
 
+    def generate_random_data_movies(self):
+        body_movies = {
+            "name": self.generate_random_film_name(),
+            "imageUrl": self.generate_random_image_url(),
+            "price": self.generate_random_prise(),
+            "description": self.generate_random_description(),
+            "location": self.generate_location(),
+            "published": self.generete_published(),
+            "genreId": 186
+        }
+
+        return body_movies

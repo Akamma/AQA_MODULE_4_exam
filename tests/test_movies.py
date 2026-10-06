@@ -1,3 +1,7 @@
+from data.data_generator import DataGenerator
+
+generate = DataGenerator()
+
 def test_get_movies(api_manager):
     api_manager.movies_api.get_movies(expected_status=200)
 
@@ -68,7 +72,7 @@ def test_get_movies_with_filter_created_at(api_manager, params_get_movies):
 
 def test_get_movies_with_invalid_params(api_manager, params_get_movies):
     params = {"pageSize": "qwe"}
-    response = api_manager.movies_api.get_movies(expected_status=400, params=params)
+    api_manager.movies_api.get_movies(expected_status=400, params=params)
 
 
 def test_created_movies_with_admin_creds(created_movies, created_movies_data, api_manager):
@@ -100,7 +104,7 @@ def test_created_movies_already_exists(created_movies_data, api_manager, auth_wi
     api_manager.movies_api.create_movies(movies_data=created_movies_data, expected_status=409)
 
 def test_get_film_by_invalid_id(api_manager):
-    response = api_manager.movies_api.get_movies_by_id(id=9999999, expected_status=404)
+    api_manager.movies_api.get_movies_by_id(id=9999999, expected_status=404)
 
 def test_delete_movies_with_admin_creds(api_manager, auth_with_admin_credentials, created_movies):
     response = created_movies.json()
@@ -108,10 +112,13 @@ def test_delete_movies_with_admin_creds(api_manager, auth_with_admin_credentials
     api_manager.movies_api.delete_movies(id)
     api_manager.movies_api.get_movies_by_id(id, expected_status=404)
 
-def test_delete_movies_without_admin_creds(api_manager, created_movies, auth_without_admin_credentials, api_manager_with_role_user):
+def test_delete_movies_without_admin_creds(api_manager, created_movies, auth_without_admin_credentials):
     response = created_movies.json()
     id = response["id"]
-    api_manager_with_role_user.movies_api.delete_movies(id, expected_status=403)
+    user_data = generate.generate_random_user_data()
+    api_manager.auth_api.register_user(user_data=user_data)
+    api_manager.auth_api.authenticate((user_data['email'], user_data['password']))
+    api_manager.movies_api.delete_movies(id, expected_status=403)
 
 def test_delete_movies_with_invalid_id(api_manager, auth_with_admin_credentials):
     api_manager.movies_api.delete_movies(id=9999999, expected_status=404)
@@ -127,15 +134,15 @@ def test_update_movies_with_admin_creds(api_manager, created_movies, update_movi
     del response["rating"]
     assert response == update_movies_data
 
-def test_update_movies_without_admin_creds(api_manager_with_role_user, created_movies, update_movies_data, auth_without_admin_credentials):
+def test_update_movies_without_admin_creds(api_manager, created_movies, update_movies_data, auth_without_admin_credentials):
     id = created_movies.json()["id"]
-    api_manager_with_role_user.movies_api.get_movies_by_id(id)
-    api_manager_with_role_user.movies_api.update_movies(id=id, movies_data=update_movies_data, expected_status=403)
+    api_manager.movies_api.get_movies_by_id(id)
+    api_manager.movies_api.update_movies(id=id, movies_data=update_movies_data, expected_status=403)
 
 def test_update_movies_with_invalid_data(api_manager, created_movies):
     id = created_movies.json()["id"]
     api_manager.movies_api.get_movies_by_id(id)
-    response = api_manager.movies_api.update_movies(id=id, movies_data={"genreId" : "qwe"}, expected_status=400)
+    api_manager.movies_api.update_movies(id=id, movies_data={"genreId" : "qwe"}, expected_status=400)
 
 def test_update_movies_with_invalid_id(api_manager, auth_with_admin_credentials):
     api_manager.movies_api.update_movies(id=9999999, movies_data=None, expected_status=404)

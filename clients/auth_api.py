@@ -1,4 +1,4 @@
-from config.base_urls import AUTH_BASE_URL
+from config.config import AUTH_BASE_URL
 from custom_requester.custom_requester import CustomRequester
 
 
