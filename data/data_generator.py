@@ -42,7 +42,7 @@ class DataGenerator:
         return full_name
 
     def generate_random_password(self):
-        return fake.password()
+        return fake.password(special_chars=False)
 
     def generate_random_email(self):
         # return fake.email()
