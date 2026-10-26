@@ -1,0 +1,83 @@
+======================================== REQUEST ========================================
+[32mpytest tests/test_movies.py::test_get_movies_with_filter_page[0m
+curl -X GET 'https://api.dev-cinescope.coconutqa.ru/movies?pageSize=4&page=10' \
+-H 'User-Agent: python-requests/2.34.2' \
+-H 'Accept-Encoding: gzip, deflate' \
+-H 'Accept: application/json' \
+-H 'Connection: keep-alive' \
+-H 'Content-Type: application/json' \
+
+
+======================================== RESPONSE ========================================
+	STATUS_CODE: [32m200[0m
+	TIME(ms): 197.73
+	DATA:
+{
+    "movies": [
+        {
+            "id": 3730,
+            "name": "Тестовое кино - Synchronized 5thgeneration time-frame",
+            "description": "Game they line a clear. Actually interest investment letter century PM.",
+            "genreId": 7,
+            "imageUrl": "https://placekitten.com/572/15",
+            "price": 134,
+            "rating": 0,
+            "location": "SPB",
+            "published": true,
+            "createdAt": "2025-11-21T09:38:43.141Z",
+            "genre": {
+                "name": "Мюзикл"
+            }
+        },
+        {
+            "id": 3735,
+            "name": "Тестовое кино - Exclusive multi-tasking productivity",
+            "description": "Have local consumer wide career. Subject start baby who southern fear cup. Item model learn always everything. Price five more.",
+            "genreId": 10,
+            "imageUrl": "https://placekitten.com/53/577",
+            "price": 493,
+            "rating": 0,
+            "location": "SPB",
+            "published": true,
+            "createdAt": "2025-11-21T09:39:12.801Z",
+            "genre": {
+                "name": "Военный"
+            }
+        },
+        {
+            "id": 3891,
+            "name": "Against.",
+            "description": "Such always such ten off sound appear student. Explain poor couple position.\nCompare reach build. Baby free suddenly worry.",
+            "genreId": 7,
+            "imageUrl": "https://picsum.photos/451/902",
+            "price": 814,
+            "rating": 0,
+            "location": "SPB",
+            "published": true,
+            "createdAt": "2025-11-23T10:46:07.514Z",
+            "genre": {
+                "name": "Мюзикл"
+            }
+        },
+        {
+            "id": 3962,
+            "name": "Score.",
+            "description": "Own region material student part. Design consider meeting difficult.\nChair start might away at language. Property against share rest.",
+            "genreId": 8,
+            "imageUrl": "https://picsum.photos/395/540",
+            "price": 506,
+            "rating": 0,
+            "location": "SPB",
+            "published": true,
+            "createdAt": "2025-11-23T14:33:50.732Z",
+            "genre": {
+                "name": "Фэнтези"
+            }
+        }
+    ],
+    "count": 3145,
+    "page": 10,
+    "pageSize": 4,
+    "pageCount": 787
+}
+================================================================================

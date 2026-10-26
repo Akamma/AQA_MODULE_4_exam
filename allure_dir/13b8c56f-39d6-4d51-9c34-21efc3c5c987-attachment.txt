@@ -1,0 +1,173 @@
+======================================== REQUEST ========================================
+[32mpytest tests/test_movies.py::test_get_movies_with_filter[MSK][0m
+curl -X GET 'https://api.dev-cinescope.coconutqa.ru/movies?minPrice=500&maxPrice=1000&locations=MSK&genreId=186' \
+-H 'User-Agent: python-requests/2.34.2' \
+-H 'Accept-Encoding: gzip, deflate' \
+-H 'Accept: application/json' \
+-H 'Connection: keep-alive' \
+-H 'Content-Type: application/json' \
+
+
+======================================== RESPONSE ========================================
+	STATUS_CODE: [32m200[0m
+	TIME(ms): 209.06
+	DATA:
+{
+    "movies": [
+        {
+            "id": 24125,
+            "name": "Тестовый фильм 9806",
+            "description": "Обновлённое описание",
+            "genreId": 186,
+            "imageUrl": "https://example.com/image.png",
+            "price": 999,
+            "rating": 0,
+            "location": "MSK",
+            "published": true,
+            "createdAt": "2026-03-25T15:04:12.817Z",
+            "genre": {
+                "name": "mouth"
+            }
+        },
+        {
+            "id": 72855,
+            "name": "API movie f4e12f51-d8ae-4000-a384-4259b1c98699",
+            "description": "Салон монета дальний помимо нажать кузнец. Новый пища рай порт каюта коллектив сбросить правильный.",
+            "genreId": 186,
+            "imageUrl": "https://example.com/image.png",
+            "price": 782,
+            "rating": 0,
+            "location": "MSK",
+            "published": true,
+            "createdAt": "2026-08-31T10:49:19.515Z",
+            "genre": {
+                "name": "mouth"
+            }
+        },
+        {
+            "id": 72871,
+            "name": "API movie 82cc5613-af3a-4b96-ac19-6cb8b1de305f",
+            "description": "Сынок решение подробность салон пятеро слишком столетие. Бочок да второй поговорить парень.",
+            "genreId": 186,
+            "imageUrl": "https://example.com/image.png",
+            "price": 874,
+            "rating": 0,
+            "location": "MSK",
+            "published": true,
+            "createdAt": "2026-08-31T11:01:22.008Z",
+            "genre": {
+                "name": "mouth"
+            }
+        },
+        {
+            "id": 38400,
+            "name": "Charles Clarke",
+            "description": "Its public side thought image lose.",
+            "genreId": 186,
+            "imageUrl": "https://image.url",
+            "price": 572,
+            "rating": 1.2,
+            "location": "MSK",
+            "published": true,
+            "createdAt": "2026-09-29T18:51:00.507Z",
+            "genre": {
+                "name": "mouth"
+            }
+        },
+        {
+            "id": 76217,
+            "name": "Budget officer land",
+            "description": "court toward way us thing life represent late area keep",
+            "genreId": 186,
+            "imageUrl": "https://placekittens.com/665/483",
+            "price": 719,
+            "rating": 0,
+            "location": "MSK",
+            "published": true,
+            "createdAt": "2026-10-02T11:21:42.944Z",
+            "genre": {
+                "name": "mouth"
+            }
+        },
+        {
+            "id": 76222,
+            "name": "Season up art",
+            "description": "evidence some learn fish community two remember who effect alone",
+            "genreId": 186,
+            "imageUrl": "https://placekittens.com/151/192",
+            "price": 703,
+            "rating": 0,
+            "location": "MSK",
+            "published": true,
+            "createdAt": "2026-10-02T11:26:03.530Z",
+            "genre": {
+                "name": "mouth"
+            }
+        },
+        {
+            "id": 76404,
+            "name": "Amy Allen",
+            "description": "Least subject career teacher arrive card exactly expect.",
+            "genreId": 186,
+            "imageUrl": "http://www.greer.com/",
+            "price": 576,
+            "rating": 0,
+            "location": "MSK",
+            "published": true,
+            "createdAt": "2026-10-02T14:38:52.075Z",
+            "genre": {
+                "name": "mouth"
+            }
+        },
+        {
+            "id": 76412,
+            "name": "Ago pass long",
+            "description": "dinner region idea her prevent also particularly he rather government",
+            "genreId": 186,
+            "imageUrl": "https://picsum.photos/275/186",
+            "price": 587,
+            "rating": 0,
+            "location": "MSK",
+            "published": true,
+            "createdAt": "2026-10-02T15:24:38.197Z",
+            "genre": {
+                "name": "mouth"
+            }
+        },
+        {
+            "id": 76418,
+            "name": "While generation believe",
+            "description": "bill direction white safe last how you question interesting recent",
+            "genreId": 186,
+            "imageUrl": "https://picsum.photos/163/776",
+            "price": 873,
+            "rating": 0,
+            "location": "MSK",
+            "published": true,
+            "createdAt": "2026-10-03T06:54:07.496Z",
+            "genre": {
+                "name": "mouth"
+            }
+        },
+        {
+            "id": 76437,
+            "name": "Activity dog trial",
+            "description": "administration table thank glass eight return other world alone scientist",
+            "genreId": 186,
+            "imageUrl": "https://picsum.photos/297/981",
+            "price": 502,
+            "rating": 0,
+            "location": "MSK",
+            "published": true,
+            "createdAt": "2026-10-03T08:23:15.897Z",
+            "genre": {
+                "name": "mouth"
+            }
+        }
+    ],
+    "count": 167,
+    "page": 1,
+    "pageSize": 10,
+    "pageCount": 17
+}
+================================================================================

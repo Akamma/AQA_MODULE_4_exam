@@ -1,0 +1,134 @@
+======================================== REQUEST ========================================
+[32mpytest tests/test_movies.py::test_update_movies_with_super_admin_creds (setup)[0m
+curl -X POST 'https://auth.dev-cinescope.coconutqa.ru/login' \
+-H 'User-Agent: python-requests/2.34.2' \
+-H 'Accept-Encoding: gzip, deflate' \
+-H 'Accept: application/json' \
+-H 'Connection: keep-alive' \
+-H 'Content-Type: application/json' \
+-H 'Content-Length: 53' \
+-d '{"email": "api1@gmail.com", "password": "asdqwe123Q"}' 
+
+
+======================================== RESPONSE ========================================
+	STATUS_CODE: [32m201[0m
+	TIME(ms): 323.98
+	DATA:
+{
+    "user": {
+        "id": "fff72b8b-6071-46a3-b6c5-bf2cc5f78718",
+        "email": "api1@gmail.com",
+        "fullName": "Donald Diaz",
+        "roles": [
+            "USER",
+            "ADMIN",
+            "SUPER_ADMIN"
+        ]
+    },
+    "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImZmZjcyYjhiLTYwNzEtNDZhMy1iNmM1LWJmMmNjNWY3ODcxOCIsImVtYWlsIjoiYXBpMUBnbWFpbC5jb20iLCJyb2xlcyI6WyJVU0VSIiwiQURNSU4iLCJTVVBFUl9BRE1JTiJdLCJ2ZXJpZmllZCI6dHJ1ZSwiaWF0IjoxNzkzMDM5ODgzLCJleHAiOjE3OTMwNDE2ODN9.RAIPE89SvdHXxv0zhAMl3Ez1-sLGNtyOM7XnaNHm6lg",
+    "refreshToken": "f21862d4-da8a-49e5-9587-9881156dafcd",
+    "expiresIn": 1793041683936
+}
+================================================================================
+
+
+======================================== REQUEST ========================================
+[32mpytest tests/test_movies.py::test_update_movies_with_super_admin_creds (setup)[0m
+curl -X POST 'https://api.dev-cinescope.coconutqa.ru/movies' \
+-H 'User-Agent: python-requests/2.34.2' \
+-H 'Accept-Encoding: gzip, deflate' \
+-H 'Accept: application/json' \
+-H 'Connection: keep-alive' \
+-H 'Content-Type: application/json' \
+-H 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImZmZjcyYjhiLTYwNzEtNDZhMy1iNmM1LWJmMmNjNWY3ODcxOCIsImVtYWlsIjoiYXBpMUBnbWFpbC5jb20iLCJyb2xlcyI6WyJVU0VSIiwiQURNSU4iLCJTVVBFUl9BRE1JTiJdLCJ2ZXJpZmllZCI6dHJ1ZSwiaWF0IjoxNzkzMDM5ODgzLCJleHAiOjE3OTMwNDE2ODN9.RAIPE89SvdHXxv0zhAMl3Ez1-sLGNtyOM7XnaNHm6lg' \
+-H 'Content-Length: 226' \
+-d '{"name": "Become feeling tonight", "imageUrl": "https://picsum.photos/726/130", "price": 186, "description": "focus side better six talk anything toward maintain he offer", "location": "SPB", "published": true, "genreId": 186}' 
+
+
+======================================== RESPONSE ========================================
+	STATUS_CODE: [32m201[0m
+	TIME(ms): 187.05
+	DATA:
+{
+    "id": 79263,
+    "name": "Become feeling tonight",
+    "price": 186,
+    "description": "focus side better six talk anything toward maintain he offer",
+    "imageUrl": "https://picsum.photos/726/130",
+    "location": "SPB",
+    "published": true,
+    "rating": 0,
+    "genreId": 186,
+    "createdAt": "2026-10-26T18:38:04.117Z",
+    "genre": {
+        "name": "mouth"
+    }
+}
+================================================================================
+======================================== REQUEST ========================================
+[32mpytest tests/test_movies.py::test_update_movies_with_super_admin_creds[0m
+curl -X GET 'https://api.dev-cinescope.coconutqa.ru/movies/79263' \
+-H 'User-Agent: python-requests/2.34.2' \
+-H 'Accept-Encoding: gzip, deflate' \
+-H 'Accept: application/json' \
+-H 'Connection: keep-alive' \
+-H 'Content-Type: application/json' \
+-H 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImZmZjcyYjhiLTYwNzEtNDZhMy1iNmM1LWJmMmNjNWY3ODcxOCIsImVtYWlsIjoiYXBpMUBnbWFpbC5jb20iLCJyb2xlcyI6WyJVU0VSIiwiQURNSU4iLCJTVVBFUl9BRE1JTiJdLCJ2ZXJpZmllZCI6dHJ1ZSwiaWF0IjoxNzkzMDM5ODgzLCJleHAiOjE3OTMwNDE2ODN9.RAIPE89SvdHXxv0zhAMl3Ez1-sLGNtyOM7XnaNHm6lg' \
+
+
+======================================== RESPONSE ========================================
+	STATUS_CODE: [32m200[0m
+	TIME(ms): 69.0
+	DATA:
+{
+    "id": 79263,
+    "name": "Become feeling tonight",
+    "price": 186,
+    "description": "focus side better six talk anything toward maintain he offer",
+    "imageUrl": "https://picsum.photos/726/130",
+    "location": "SPB",
+    "published": true,
+    "rating": 0,
+    "genreId": 186,
+    "createdAt": "2026-10-26T18:38:04.117Z",
+    "reviews": [],
+    "genre": {
+        "name": "mouth"
+    }
+}
+================================================================================
+
+
+======================================== REQUEST ========================================
+[32mpytest tests/test_movies.py::test_update_movies_with_super_admin_creds[0m
+curl -X PATCH 'https://api.dev-cinescope.coconutqa.ru/movies/79263' \
+-H 'User-Agent: python-requests/2.34.2' \
+-H 'Accept-Encoding: gzip, deflate' \
+-H 'Accept: application/json' \
+-H 'Connection: keep-alive' \
+-H 'Content-Type: application/json' \
+-H 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImZmZjcyYjhiLTYwNzEtNDZhMy1iNmM1LWJmMmNjNWY3ODcxOCIsImVtYWlsIjoiYXBpMUBnbWFpbC5jb20iLCJyb2xlcyI6WyJVU0VSIiwiQURNSU4iLCJTVVBFUl9BRE1JTiJdLCJ2ZXJpZmllZCI6dHJ1ZSwiaWF0IjoxNzkzMDM5ODgzLCJleHAiOjE3OTMwNDE2ODN9.RAIPE89SvdHXxv0zhAMl3Ez1-sLGNtyOM7XnaNHm6lg' \
+-H 'Content-Length: 218' \
+-d '{"name": "Dinner same staff", "imageUrl": "https://picsum.photos/450/987", "price": 979, "description": "at item couple federal gun tend door both accept history", "location": "MSK", "published": false, "genreId": 186}' 
+
+
+======================================== RESPONSE ========================================
+	STATUS_CODE: [32m200[0m
+	TIME(ms): 60.2
+	DATA:
+{
+    "id": 79263,
+    "name": "Dinner same staff",
+    "description": "at item couple federal gun tend door both accept history",
+    "genreId": 186,
+    "imageUrl": "https://picsum.photos/450/987",
+    "price": 979,
+    "rating": 0,
+    "location": "MSK",
+    "published": false,
+    "createdAt": "2026-10-26T18:38:04.117Z",
+    "genre": {
+        "name": "mouth"
+    }
+}
+================================================================================

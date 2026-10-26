@@ -1,0 +1,62 @@
+======================================== REQUEST ========================================
+[32mpytest tests/test_movies.py::test_created_movies_with_invalid_params (setup)[0m
+curl -X POST 'https://auth.dev-cinescope.coconutqa.ru/login' \
+-H 'User-Agent: python-requests/2.34.2' \
+-H 'Accept-Encoding: gzip, deflate' \
+-H 'Accept: application/json' \
+-H 'Connection: keep-alive' \
+-H 'Content-Type: application/json' \
+-H 'Content-Length: 53' \
+-d '{"email": "api1@gmail.com", "password": "asdqwe123Q"}' 
+
+
+======================================== RESPONSE ========================================
+	STATUS_CODE: [32m201[0m
+	TIME(ms): 319.11
+	DATA:
+{
+    "user": {
+        "id": "fff72b8b-6071-46a3-b6c5-bf2cc5f78718",
+        "email": "api1@gmail.com",
+        "fullName": "Donald Diaz",
+        "roles": [
+            "USER",
+            "ADMIN",
+            "SUPER_ADMIN"
+        ]
+    },
+    "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImZmZjcyYjhiLTYwNzEtNDZhMy1iNmM1LWJmMmNjNWY3ODcxOCIsImVtYWlsIjoiYXBpMUBnbWFpbC5jb20iLCJyb2xlcyI6WyJVU0VSIiwiQURNSU4iLCJTVVBFUl9BRE1JTiJdLCJ2ZXJpZmllZCI6dHJ1ZSwiaWF0IjoxNzkzMDM5ODc4LCJleHAiOjE3OTMwNDE2Nzh9.2SxlGkOQjbNSOLQofPpL_lY7gS2___iulcAzHXfUWd4",
+    "refreshToken": "5eff2c0c-9b6e-4b5c-ad89-54ee5a81d8bb",
+    "expiresIn": 1793041678629
+}
+================================================================================
+======================================== REQUEST ========================================
+[32mpytest tests/test_movies.py::test_created_movies_with_invalid_params[0m
+curl -X POST 'https://api.dev-cinescope.coconutqa.ru/movies' \
+-H 'User-Agent: python-requests/2.34.2' \
+-H 'Accept-Encoding: gzip, deflate' \
+-H 'Accept: application/json' \
+-H 'Connection: keep-alive' \
+-H 'Content-Type: application/json' \
+-H 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImZmZjcyYjhiLTYwNzEtNDZhMy1iNmM1LWJmMmNjNWY3ODcxOCIsImVtYWlsIjoiYXBpMUBnbWFpbC5jb20iLCJyb2xlcyI6WyJVU0VSIiwiQURNSU4iLCJTVVBFUl9BRE1JTiJdLCJ2ZXJpZmllZCI6dHJ1ZSwiaWF0IjoxNzkzMDM5ODc4LCJleHAiOjE3OTMwNDE2Nzh9.2SxlGkOQjbNSOLQofPpL_lY7gS2___iulcAzHXfUWd4' \
+-H 'Content-Length: 2' \
+
+
+======================================== RESPONSE ========================================
+	STATUS_CODE: [31m400[0m
+	TIME(ms): 161.16
+	DATA: [31m{
+    "message": [
+        "name should not be empty",
+        "Поле name должно быть строкой",
+        "Поле price должно быть числом",
+        "Поле description должно быть строкой",
+        "Поле location должно быть одним из: MSK, SPB",
+        "Поле location должно быть строкой",
+        "Поле published должно быть булевым значением",
+        "Поле genreId должно быть числом"
+    ],
+    "error": "Bad Request",
+    "statusCode": 400
+}[0m
+================================================================================

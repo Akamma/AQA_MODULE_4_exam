@@ -1,0 +1,173 @@
+======================================== REQUEST ========================================
+[32mpytest tests/test_movies.py::test_get_movies_with_filter_locations[0m
+curl -X GET 'https://api.dev-cinescope.coconutqa.ru/movies?locations=MSK' \
+-H 'User-Agent: python-requests/2.34.2' \
+-H 'Accept-Encoding: gzip, deflate' \
+-H 'Accept: application/json' \
+-H 'Connection: keep-alive' \
+-H 'Content-Type: application/json' \
+
+
+======================================== RESPONSE ========================================
+	STATUS_CODE: [32m200[0m
+	TIME(ms): 188.73
+	DATA:
+{
+    "movies": [
+        {
+            "id": 4191,
+            "name": "Team five.",
+            "description": "Manager image official character image eye. House involve scientist senior indicate full. Already box but need.",
+            "genreId": 7,
+            "imageUrl": "https://dummyimage.com/120x29",
+            "price": 908,
+            "rating": 0,
+            "location": "MSK",
+            "published": true,
+            "createdAt": "2025-11-24T13:30:56.025Z",
+            "genre": {
+                "name": "Мюзикл"
+            }
+        },
+        {
+            "id": 4195,
+            "name": "Prove however health.",
+            "description": "Fund guy participant body scientist candidate research provide. Sit heart rest medical law. Husband anything help sometimes change near skill.",
+            "genreId": 10,
+            "imageUrl": "https://placekitten.com/344/936",
+            "price": 986,
+            "rating": 0,
+            "location": "MSK",
+            "published": true,
+            "createdAt": "2025-11-24T13:32:55.939Z",
+            "genre": {
+                "name": "Военный"
+            }
+        },
+        {
+            "id": 4203,
+            "name": "Not business woman.",
+            "description": "Gas actually economy consider recent. Face place certain sport meeting party kind however.",
+            "genreId": 7,
+            "imageUrl": "https://placekitten.com/835/725",
+            "price": 391,
+            "rating": 0,
+            "location": "MSK",
+            "published": true,
+            "createdAt": "2025-11-24T13:36:09.717Z",
+            "genre": {
+                "name": "Мюзикл"
+            }
+        },
+        {
+            "id": 4244,
+            "name": "Sea cold.",
+            "description": "Kitchen edge attack majority now thousand increase. Stage above forget ok change what. Also turn scientist practice.\nAttorney build win concern to. Business back way make no increase.",
+            "genreId": 10,
+            "imageUrl": "https://picsum.photos/23/927",
+            "price": 789,
+            "rating": 0,
+            "location": "MSK",
+            "published": true,
+            "createdAt": "2025-11-24T13:47:09.989Z",
+            "genre": {
+                "name": "Военный"
+            }
+        },
+        {
+            "id": 4246,
+            "name": "Chance south form school.",
+            "description": "Skin main billion. Stand expert around. Just born well serious their.\nYour present amount language. Sure bill that far.",
+            "genreId": 7,
+            "imageUrl": "https://placekitten.com/885/838",
+            "price": 236,
+            "rating": 0,
+            "location": "MSK",
+            "published": true,
+            "createdAt": "2025-11-24T13:53:00.900Z",
+            "genre": {
+                "name": "Мюзикл"
+            }
+        },
+        {
+            "id": 4278,
+            "name": "Up first song.",
+            "description": "Provide wish sit million current news. To get hospital break. Rate box of.",
+            "genreId": 10,
+            "imageUrl": "https://dummyimage.com/938x471",
+            "price": 390,
+            "rating": 0,
+            "location": "MSK",
+            "published": true,
+            "createdAt": "2025-11-24T14:12:24.114Z",
+            "genre": {
+                "name": "Военный"
+            }
+        },
+        {
+            "id": 4411,
+            "name": "Drive yeah.",
+            "description": "Agreement speech room. Hard international career skill Congress few you.\nProperty out development professional those some. Store trade rich cut western think close pressure.",
+            "genreId": 10,
+            "imageUrl": "https://picsum.photos/433/320",
+            "price": 785,
+            "rating": 0,
+            "location": "MSK",
+            "published": true,
+            "createdAt": "2025-11-24T17:14:16.191Z",
+            "genre": {
+                "name": "Военный"
+            }
+        },
+        {
+            "id": 4417,
+            "name": "Thousand.",
+            "description": "Station significant appear could play popular be. Born eye right.\nFall probably president nor cup current. Remain she threat important. Put authority consider ask fact.",
+            "genreId": 10,
+            "imageUrl": "https://placekitten.com/745/239",
+            "price": 353,
+            "rating": 0,
+            "location": "MSK",
+            "published": true,
+            "createdAt": "2025-11-24T17:19:02.585Z",
+            "genre": {
+                "name": "Военный"
+            }
+        },
+        {
+            "id": 4419,
+            "name": "Win over.",
+            "description": "Laugh staff each adult whether project. Ground indeed middle bring mission prevent individual. Bag matter water result through.",
+            "genreId": 9,
+            "imageUrl": "https://dummyimage.com/615x804",
+            "price": 329,
+            "rating": 0,
+            "location": "MSK",
+            "published": true,
+            "createdAt": "2025-11-24T17:19:22.272Z",
+            "genre": {
+                "name": "Анимация"
+            }
+        },
+        {
+            "id": 4467,
+            "name": "Where.",
+            "description": "Present rate receive prevent. Agreement site check. Vote owner public management.\nAnother reflect company southern government expert. Mrs enjoy Mrs part building.",
+            "genreId": 9,
+            "imageUrl": "https://placekitten.com/181/563",
+            "price": 382,
+            "rating": 0,
+            "location": "MSK",
+            "published": true,
+            "createdAt": "2025-11-24T18:41:06.826Z",
+            "genre": {
+                "name": "Анимация"
+            }
+        }
+    ],
+    "count": 1417,
+    "page": 1,
+    "pageSize": 10,
+    "pageCount": 142
+}
+================================================================================

@@ -1,0 +1,173 @@
+======================================== REQUEST ========================================
+[32mpytest tests/test_movies.py::test_get_movies_with_filter_published[0m
+curl -X GET 'https://api.dev-cinescope.coconutqa.ru/movies?published=false' \
+-H 'User-Agent: python-requests/2.34.2' \
+-H 'Accept-Encoding: gzip, deflate' \
+-H 'Accept: application/json' \
+-H 'Connection: keep-alive' \
+-H 'Content-Type: application/json' \
+
+
+======================================== RESPONSE ========================================
+	STATUS_CODE: [32m200[0m
+	TIME(ms): 148.74
+	DATA:
+{
+    "movies": [
+        {
+            "id": 32,
+            "name": "Modern.",
+            "description": "Several allow international collection. This success usually effect whose. American day toward.",
+            "genreId": 9,
+            "imageUrl": "https://picsum.photos/867/287",
+            "price": 347,
+            "rating": 0,
+            "location": "MSK",
+            "published": false,
+            "createdAt": "2024-08-27T07:54:07.553Z",
+            "genre": {
+                "name": "Анимация"
+            }
+        },
+        {
+            "id": 108,
+            "name": "Turn send.",
+            "description": "List also and single run physical. Line improve cold product.\nStation child tend fine response develop. Interest draw should avoid order stuff. Everyone stock article quality strategy first tough.",
+            "genreId": 9,
+            "imageUrl": "https://dummyimage.com/296x528",
+            "price": 847,
+            "rating": 0,
+            "location": "SPB",
+            "published": false,
+            "createdAt": "2025-05-08T11:13:12.856Z",
+            "genre": {
+                "name": "Анимация"
+            }
+        },
+        {
+            "id": 127,
+            "name": "At wind.",
+            "description": "Concern into note turn would positive together. If significant base represent.\nDemocratic economic power wish. Ahead mission view civil central court forward.\nEdge local thus bad. Happy also tree.",
+            "genreId": 10,
+            "imageUrl": "https://placekitten.com/618/572",
+            "price": 861,
+            "rating": 0,
+            "location": "SPB",
+            "published": false,
+            "createdAt": "2025-05-08T15:48:28.162Z",
+            "genre": {
+                "name": "Военный"
+            }
+        },
+        {
+            "id": 155,
+            "name": "By.",
+            "description": "Kitchen responsibility film black key. Read specific choice write practice.\nStructure her mission ever employee large with. Perhaps foreign receive himself ahead sister pick occur.",
+            "genreId": 9,
+            "imageUrl": "https://dummyimage.com/171x446",
+            "price": 304,
+            "rating": 0,
+            "location": "MSK",
+            "published": false,
+            "createdAt": "2025-05-08T16:35:07.907Z",
+            "genre": {
+                "name": "Анимация"
+            }
+        },
+        {
+            "id": 199,
+            "name": "Page.",
+            "description": "Total here big care. Save win ability plan professional far.\nRule modern under environmental far ask. Street often toward great may fine why.\nReport ever attorney. Food which least use information.",
+            "genreId": 9,
+            "imageUrl": "https://picsum.photos/647/37",
+            "price": 970,
+            "rating": 0,
+            "location": "MSK",
+            "published": false,
+            "createdAt": "2025-05-08T17:37:25.924Z",
+            "genre": {
+                "name": "Анимация"
+            }
+        },
+        {
+            "id": 262,
+            "name": "When Professional",
+            "description": "None space Mr likely relate nor who focus father economic.",
+            "genreId": 10,
+            "imageUrl": null,
+            "price": 354,
+            "rating": 0,
+            "location": "SPB",
+            "published": false,
+            "createdAt": "2025-05-09T14:43:09.662Z",
+            "genre": {
+                "name": "Военный"
+            }
+        },
+        {
+            "id": 268,
+            "name": "Фильм blfedskqpq",
+            "description": "Описание qpioemxntateenorxxtprwipldejqu",
+            "genreId": 7,
+            "imageUrl": "http://www.npo.net/list/blogindex.htm",
+            "price": 645,
+            "rating": 0,
+            "location": "MSK",
+            "published": false,
+            "createdAt": "2025-05-09T15:32:59.713Z",
+            "genre": {
+                "name": "Мюзикл"
+            }
+        },
+        {
+            "id": 336,
+            "name": "Itself history.",
+            "description": "Data happen require billion hair Mr moment. Television company behavior each foreign necessary.",
+            "genreId": 7,
+            "imageUrl": "https://placekitten.com/992/44",
+            "price": 991,
+            "rating": 0,
+            "location": "MSK",
+            "published": false,
+            "createdAt": "2025-05-11T05:38:32.572Z",
+            "genre": {
+                "name": "Мюзикл"
+            }
+        },
+        {
+            "id": 363,
+            "name": "Himself During",
+            "description": "Large measure story discuss grow movie garden black newspaper collection voice apply back.",
+            "genreId": 8,
+            "imageUrl": null,
+            "price": 237,
+            "rating": 0,
+            "location": "SPB",
+            "published": false,
+            "createdAt": "2025-05-15T18:25:21.847Z",
+            "genre": {
+                "name": "Фэнтези"
+            }
+        },
+        {
+            "id": 370,
+            "name": "Фильм asvkpdurau",
+            "description": "Описание emkwtbvghdmjemnsatzubgsoetrjmk",
+            "genreId": 9,
+            "imageUrl": "https://pierce-thompson.info/posts/tags/mainregister.html",
+            "price": 948,
+            "rating": 0,
+            "location": "MSK",
+            "published": false,
+            "createdAt": "2025-05-18T14:01:46.028Z",
+            "genre": {
+                "name": "Анимация"
+            }
+        }
+    ],
+    "count": 1981,
+    "page": 1,
+    "pageSize": 10,
+    "pageCount": 199
+}
+================================================================================
