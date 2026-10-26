@@ -1,0 +1,53 @@
+======================================== REQUEST ========================================
+[32mpytest tests/test_movies.py::test_get_movies_with_filter_pagesize[0m
+curl -X GET 'https://api.dev-cinescope.coconutqa.ru/movies?pageSize=2' \
+-H 'User-Agent: python-requests/2.34.2' \
+-H 'Accept-Encoding: gzip, deflate' \
+-H 'Accept: application/json' \
+-H 'Connection: keep-alive' \
+-H 'Content-Type: application/json' \
+
+
+======================================== RESPONSE ========================================
+	STATUS_CODE: [32m200[0m
+	TIME(ms): 157.66
+	DATA:
+{
+    "movies": [
+        {
+            "id": 836,
+            "name": "Виртуальная и многозадачная возможность",
+            "description": "Означать тюрьма тута магазин адвокат. Задержать песенка порядок чувство легко бок.",
+            "genreId": 7,
+            "imageUrl": "https://www.oao.biz/",
+            "price": 468,
+            "rating": 0,
+            "location": "SPB",
+            "published": true,
+            "createdAt": "2025-05-22T15:40:55.013Z",
+            "genre": {
+                "name": "Мюзикл"
+            }
+        },
+        {
+            "id": 885,
+            "name": "Information course.",
+            "description": "How product able. Today perhaps product however onto PM anything.\nGun result per. Who affect feel once per away. Easy second something who.",
+            "genreId": 8,
+            "imageUrl": "https://placekitten.com/905/911",
+            "price": 713,
+            "rating": 1,
+            "location": "SPB",
+            "published": true,
+            "createdAt": "2025-05-23T11:38:15.515Z",
+            "genre": {
+                "name": "Фэнтези"
+            }
+        }
+    ],
+    "count": 3145,
+    "page": 1,
+    "pageSize": 2,
+    "pageCount": 1573
+}
+================================================================================

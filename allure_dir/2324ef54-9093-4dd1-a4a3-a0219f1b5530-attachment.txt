@@ -1,0 +1,22 @@
+======================================== REQUEST ========================================
+[32mpytest tests/test_movies.py::test_get_movies_with_filter_genreId[0m
+curl -X GET 'https://api.dev-cinescope.coconutqa.ru/movies?genreId=4489' \
+-H 'User-Agent: python-requests/2.34.2' \
+-H 'Accept-Encoding: gzip, deflate' \
+-H 'Accept: application/json' \
+-H 'Connection: keep-alive' \
+-H 'Content-Type: application/json' \
+
+
+======================================== RESPONSE ========================================
+	STATUS_CODE: [32m200[0m
+	TIME(ms): 216.39
+	DATA:
+{
+    "movies": [],
+    "count": 0,
+    "page": 1,
+    "pageSize": 10,
+    "pageCount": 0
+}
+================================================================================

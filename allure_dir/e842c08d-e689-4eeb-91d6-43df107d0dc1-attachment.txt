@@ -1,0 +1,126 @@
+======================================== REQUEST ========================================
+[32mpytest tests/test_movies.py::test_update_movies_with_invalid_data (setup)[0m
+curl -X POST 'https://auth.dev-cinescope.coconutqa.ru/login' \
+-H 'User-Agent: python-requests/2.34.2' \
+-H 'Accept-Encoding: gzip, deflate' \
+-H 'Accept: application/json' \
+-H 'Connection: keep-alive' \
+-H 'Content-Type: application/json' \
+-H 'Content-Length: 53' \
+-d '{"email": "api1@gmail.com", "password": "asdqwe123Q"}' 
+
+
+======================================== RESPONSE ========================================
+	STATUS_CODE: [32m201[0m
+	TIME(ms): 359.0
+	DATA:
+{
+    "user": {
+        "id": "fff72b8b-6071-46a3-b6c5-bf2cc5f78718",
+        "email": "api1@gmail.com",
+        "fullName": "Donald Diaz",
+        "roles": [
+            "USER",
+            "ADMIN",
+            "SUPER_ADMIN"
+        ]
+    },
+    "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImZmZjcyYjhiLTYwNzEtNDZhMy1iNmM1LWJmMmNjNWY3ODcxOCIsImVtYWlsIjoiYXBpMUBnbWFpbC5jb20iLCJyb2xlcyI6WyJVU0VSIiwiQURNSU4iLCJTVVBFUl9BRE1JTiJdLCJ2ZXJpZmllZCI6dHJ1ZSwiaWF0IjoxNzkzMDM5ODg2LCJleHAiOjE3OTMwNDE2ODZ9.xc27Tk3qLmFvR5oOdUUehb0Juoi5th0vbUv_dS3UTVw",
+    "refreshToken": "2e013bab-5071-40bb-b925-6269befec8aa",
+    "expiresIn": 1793041686038
+}
+================================================================================
+
+
+======================================== REQUEST ========================================
+[32mpytest tests/test_movies.py::test_update_movies_with_invalid_data (setup)[0m
+curl -X POST 'https://api.dev-cinescope.coconutqa.ru/movies' \
+-H 'User-Agent: python-requests/2.34.2' \
+-H 'Accept-Encoding: gzip, deflate' \
+-H 'Accept: application/json' \
+-H 'Connection: keep-alive' \
+-H 'Content-Type: application/json' \
+-H 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImZmZjcyYjhiLTYwNzEtNDZhMy1iNmM1LWJmMmNjNWY3ODcxOCIsImVtYWlsIjoiYXBpMUBnbWFpbC5jb20iLCJyb2xlcyI6WyJVU0VSIiwiQURNSU4iLCJTVVBFUl9BRE1JTiJdLCJ2ZXJpZmllZCI6dHJ1ZSwiaWF0IjoxNzkzMDM5ODg2LCJleHAiOjE3OTMwNDE2ODZ9.xc27Tk3qLmFvR5oOdUUehb0Juoi5th0vbUv_dS3UTVw' \
+-H 'Content-Length: 220' \
+-d '{"name": "Service series federal", "imageUrl": "https://dummyimage.com/205x148", "price": 113, "description": "foot likely away be term among grow available us than", "location": "MSK", "published": true, "genreId": 186}' 
+
+
+======================================== RESPONSE ========================================
+	STATUS_CODE: [32m201[0m
+	TIME(ms): 169.95
+	DATA:
+{
+    "id": 79265,
+    "name": "Service series federal",
+    "price": 113,
+    "description": "foot likely away be term among grow available us than",
+    "imageUrl": "https://dummyimage.com/205x148",
+    "location": "MSK",
+    "published": true,
+    "rating": 0,
+    "genreId": 186,
+    "createdAt": "2026-10-26T18:38:06.216Z",
+    "genre": {
+        "name": "mouth"
+    }
+}
+================================================================================
+======================================== REQUEST ========================================
+[32mpytest tests/test_movies.py::test_update_movies_with_invalid_data[0m
+curl -X GET 'https://api.dev-cinescope.coconutqa.ru/movies/79265' \
+-H 'User-Agent: python-requests/2.34.2' \
+-H 'Accept-Encoding: gzip, deflate' \
+-H 'Accept: application/json' \
+-H 'Connection: keep-alive' \
+-H 'Content-Type: application/json' \
+-H 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImZmZjcyYjhiLTYwNzEtNDZhMy1iNmM1LWJmMmNjNWY3ODcxOCIsImVtYWlsIjoiYXBpMUBnbWFpbC5jb20iLCJyb2xlcyI6WyJVU0VSIiwiQURNSU4iLCJTVVBFUl9BRE1JTiJdLCJ2ZXJpZmllZCI6dHJ1ZSwiaWF0IjoxNzkzMDM5ODg2LCJleHAiOjE3OTMwNDE2ODZ9.xc27Tk3qLmFvR5oOdUUehb0Juoi5th0vbUv_dS3UTVw' \
+
+
+======================================== RESPONSE ========================================
+	STATUS_CODE: [32m200[0m
+	TIME(ms): 78.01
+	DATA:
+{
+    "id": 79265,
+    "name": "Service series federal",
+    "price": 113,
+    "description": "foot likely away be term among grow available us than",
+    "imageUrl": "https://dummyimage.com/205x148",
+    "location": "MSK",
+    "published": true,
+    "rating": 0,
+    "genreId": 186,
+    "createdAt": "2026-10-26T18:38:06.216Z",
+    "reviews": [],
+    "genre": {
+        "name": "mouth"
+    }
+}
+================================================================================
+
+
+======================================== REQUEST ========================================
+[32mpytest tests/test_movies.py::test_update_movies_with_invalid_data[0m
+curl -X PATCH 'https://api.dev-cinescope.coconutqa.ru/movies/79265' \
+-H 'User-Agent: python-requests/2.34.2' \
+-H 'Accept-Encoding: gzip, deflate' \
+-H 'Accept: application/json' \
+-H 'Connection: keep-alive' \
+-H 'Content-Type: application/json' \
+-H 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImZmZjcyYjhiLTYwNzEtNDZhMy1iNmM1LWJmMmNjNWY3ODcxOCIsImVtYWlsIjoiYXBpMUBnbWFpbC5jb20iLCJyb2xlcyI6WyJVU0VSIiwiQURNSU4iLCJTVVBFUl9BRE1JTiJdLCJ2ZXJpZmllZCI6dHJ1ZSwiaWF0IjoxNzkzMDM5ODg2LCJleHAiOjE3OTMwNDE2ODZ9.xc27Tk3qLmFvR5oOdUUehb0Juoi5th0vbUv_dS3UTVw' \
+-H 'Content-Length: 18' \
+-d '{"genreId": "qwe"}' 
+
+
+======================================== RESPONSE ========================================
+	STATUS_CODE: [31m400[0m
+	TIME(ms): 48.43
+	DATA: [31m{
+    "message": [
+        "genreId must not be less than 1",
+        "Поле genreId должно быть числом"
+    ],
+    "error": "Bad Request",
+    "statusCode": 400
+}[0m
+================================================================================

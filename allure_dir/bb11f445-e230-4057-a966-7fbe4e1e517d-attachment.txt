@@ -1,0 +1,53 @@
+======================================== REQUEST ========================================
+[32mpytest tests/test_movies.py::test_delete_movies_with_invalid_id (setup)[0m
+curl -X POST 'https://auth.dev-cinescope.coconutqa.ru/login' \
+-H 'User-Agent: python-requests/2.34.2' \
+-H 'Accept-Encoding: gzip, deflate' \
+-H 'Accept: application/json' \
+-H 'Connection: keep-alive' \
+-H 'Content-Type: application/json' \
+-H 'Content-Length: 53' \
+-d '{"email": "api1@gmail.com", "password": "asdqwe123Q"}' 
+
+
+======================================== RESPONSE ========================================
+	STATUS_CODE: [32m201[0m
+	TIME(ms): 351.11
+	DATA:
+{
+    "user": {
+        "id": "fff72b8b-6071-46a3-b6c5-bf2cc5f78718",
+        "email": "api1@gmail.com",
+        "fullName": "Donald Diaz",
+        "roles": [
+            "USER",
+            "ADMIN",
+            "SUPER_ADMIN"
+        ]
+    },
+    "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImZmZjcyYjhiLTYwNzEtNDZhMy1iNmM1LWJmMmNjNWY3ODcxOCIsImVtYWlsIjoiYXBpMUBnbWFpbC5jb20iLCJyb2xlcyI6WyJVU0VSIiwiQURNSU4iLCJTVVBFUl9BRE1JTiJdLCJ2ZXJpZmllZCI6dHJ1ZSwiaWF0IjoxNzkzMDM5ODgwLCJleHAiOjE3OTMwNDE2ODB9.rY_cZb6qgaNijXWDXgSTxBPL2r3U8p5gq3cPiDizdM8",
+    "refreshToken": "46b72387-fb5b-43a1-b9f6-a2f4721729fb",
+    "expiresIn": 1793041680735
+}
+================================================================================
+======================================== REQUEST ========================================
+[32mpytest tests/test_movies.py::test_delete_movies_with_invalid_id[0m
+curl -X DELETE 'https://api.dev-cinescope.coconutqa.ru/movies/9999999' \
+-H 'User-Agent: python-requests/2.34.2' \
+-H 'Accept-Encoding: gzip, deflate' \
+-H 'Accept: application/json' \
+-H 'Connection: keep-alive' \
+-H 'Content-Type: application/json' \
+-H 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImZmZjcyYjhiLTYwNzEtNDZhMy1iNmM1LWJmMmNjNWY3ODcxOCIsImVtYWlsIjoiYXBpMUBnbWFpbC5jb20iLCJyb2xlcyI6WyJVU0VSIiwiQURNSU4iLCJTVVBFUl9BRE1JTiJdLCJ2ZXJpZmllZCI6dHJ1ZSwiaWF0IjoxNzkzMDM5ODgwLCJleHAiOjE3OTMwNDE2ODB9.rY_cZb6qgaNijXWDXgSTxBPL2r3U8p5gq3cPiDizdM8' \
+-H 'Content-Length: 0' \
+
+
+======================================== RESPONSE ========================================
+	STATUS_CODE: [31m404[0m
+	TIME(ms): 153.02
+	DATA: [31m{
+    "message": "Фильм не найден",
+    "error": "Not Found",
+    "statusCode": 404
+}[0m
+================================================================================

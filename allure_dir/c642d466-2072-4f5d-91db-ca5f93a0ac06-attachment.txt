@@ -1,0 +1,163 @@
+======================================== REQUEST ========================================
+[32mpytest tests/test_movies.py::test_delete_movies[super_admin-200] (setup)[0m
+curl -X POST 'https://auth.dev-cinescope.coconutqa.ru/login' \
+-H 'User-Agent: python-requests/2.34.2' \
+-H 'Accept-Encoding: gzip, deflate' \
+-H 'Accept: application/json' \
+-H 'Connection: keep-alive' \
+-H 'Content-Type: application/json' \
+-H 'Content-Length: 53' \
+-d '{"email": "api1@gmail.com", "password": "asdqwe123Q"}' 
+
+
+======================================== RESPONSE ========================================
+	STATUS_CODE: [32m201[0m
+	TIME(ms): 336.52
+	DATA:
+{
+    "user": {
+        "id": "fff72b8b-6071-46a3-b6c5-bf2cc5f78718",
+        "email": "api1@gmail.com",
+        "fullName": "Donald Diaz",
+        "roles": [
+            "USER",
+            "ADMIN",
+            "SUPER_ADMIN"
+        ]
+    },
+    "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImZmZjcyYjhiLTYwNzEtNDZhMy1iNmM1LWJmMmNjNWY3ODcxOCIsImVtYWlsIjoiYXBpMUBnbWFpbC5jb20iLCJyb2xlcyI6WyJVU0VSIiwiQURNSU4iLCJTVVBFUl9BRE1JTiJdLCJ2ZXJpZmllZCI6dHJ1ZSwiaWF0IjoxNzkzMDM5ODgxLCJleHAiOjE3OTMwNDE2ODF9.igjiENp8J6FarsQJIg81FMSgKHOU8INN4gGqzRk9l4M",
+    "refreshToken": "8d50d168-b152-404e-a1b5-cd5ffc9d2857",
+    "expiresIn": 1793041681241
+}
+================================================================================
+
+
+======================================== REQUEST ========================================
+[32mpytest tests/test_movies.py::test_delete_movies[super_admin-200] (setup)[0m
+curl -X POST 'https://api.dev-cinescope.coconutqa.ru/movies' \
+-H 'User-Agent: python-requests/2.34.2' \
+-H 'Accept-Encoding: gzip, deflate' \
+-H 'Accept: application/json' \
+-H 'Connection: keep-alive' \
+-H 'Content-Type: application/json' \
+-H 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImZmZjcyYjhiLTYwNzEtNDZhMy1iNmM1LWJmMmNjNWY3ODcxOCIsImVtYWlsIjoiYXBpMUBnbWFpbC5jb20iLCJyb2xlcyI6WyJVU0VSIiwiQURNSU4iLCJTVVBFUl9BRE1JTiJdLCJ2ZXJpZmllZCI6dHJ1ZSwiaWF0IjoxNzkzMDM5ODgxLCJleHAiOjE3OTMwNDE2ODF9.igjiENp8J6FarsQJIg81FMSgKHOU8INN4gGqzRk9l4M' \
+-H 'Content-Length: 229' \
+-d '{"name": "Still health claim", "imageUrl": "https://placekittens.com/244/441", "price": 222, "description": "environment pick myself find election writer when draw gas learn", "location": "MSK", "published": true, "genreId": 186}' 
+
+
+======================================== RESPONSE ========================================
+	STATUS_CODE: [32m201[0m
+	TIME(ms): 180.86
+	DATA:
+{
+    "id": 79261,
+    "name": "Still health claim",
+    "price": 222,
+    "description": "environment pick myself find election writer when draw gas learn",
+    "imageUrl": "https://placekittens.com/244/441",
+    "location": "MSK",
+    "published": true,
+    "rating": 0,
+    "genreId": 186,
+    "createdAt": "2026-10-26T18:38:01.409Z",
+    "genre": {
+        "name": "mouth"
+    }
+}
+================================================================================
+
+
+======================================== REQUEST ========================================
+[32mpytest tests/test_movies.py::test_delete_movies[super_admin-200] (setup)[0m
+curl -X POST 'https://auth.dev-cinescope.coconutqa.ru/user' \
+-H 'User-Agent: python-requests/2.34.2' \
+-H 'Accept-Encoding: gzip, deflate' \
+-H 'Accept: application/json' \
+-H 'Connection: keep-alive' \
+-H 'Content-Type: application/json' \
+-H 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImZmZjcyYjhiLTYwNzEtNDZhMy1iNmM1LWJmMmNjNWY3ODcxOCIsImVtYWlsIjoiYXBpMUBnbWFpbC5jb20iLCJyb2xlcyI6WyJVU0VSIiwiQURNSU4iLCJTVVBFUl9BRE1JTiJdLCJ2ZXJpZmllZCI6dHJ1ZSwiaWF0IjoxNzkzMDM5ODgxLCJleHAiOjE3OTMwNDE2ODF9.igjiENp8J6FarsQJIg81FMSgKHOU8INN4gGqzRk9l4M' \
+-H 'Cookie: refresh_token=8d50d168-b152-404e-a1b5-cd5ffc9d2857' \
+-H 'Content-Length: 177' \
+-d '{"email": "ubc1465588f1f445f@gmail.com", "fullName": "Amy Gomez", "password": "TyvvK3kg5M", "passwordRepeat": "TyvvK3kg5M", "roles": ["USER"], "verified": true, "banned": false}' 
+
+
+======================================== RESPONSE ========================================
+	STATUS_CODE: [32m201[0m
+	TIME(ms): 195.88
+	DATA:
+{
+    "id": "e2db55fe-6e90-4b2f-b5b5-962520f14b31",
+    "email": "ubc1465588f1f445f@gmail.com",
+    "fullName": "Amy Gomez",
+    "verified": true,
+    "roles": [
+        "USER"
+    ],
+    "createdAt": "2026-10-26T18:38:01.619Z"
+}
+================================================================================
+
+
+======================================== REQUEST ========================================
+[32mpytest tests/test_movies.py::test_delete_movies[super_admin-200] (setup)[0m
+curl -X POST 'https://auth.dev-cinescope.coconutqa.ru/login' \
+-H 'User-Agent: python-requests/2.34.2' \
+-H 'Accept-Encoding: gzip, deflate' \
+-H 'Accept: application/json' \
+-H 'Connection: keep-alive' \
+-H 'Content-Type: application/json' \
+-H 'Content-Length: 66' \
+-d '{"email": "ubc1465588f1f445f@gmail.com", "password": "TyvvK3kg5M"}' 
+
+
+======================================== RESPONSE ========================================
+	STATUS_CODE: [32m201[0m
+	TIME(ms): 417.07
+	DATA:
+{
+    "user": {
+        "id": "e2db55fe-6e90-4b2f-b5b5-962520f14b31",
+        "email": "ubc1465588f1f445f@gmail.com",
+        "fullName": "Amy Gomez",
+        "roles": [
+            "USER"
+        ]
+    },
+    "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImUyZGI1NWZlLTZlOTAtNGIyZi1iNWI1LTk2MjUyMGYxNGIzMSIsImVtYWlsIjoidWJjMTQ2NTU4OGYxZjQ0NWZAZ21haWwuY29tIiwicm9sZXMiOlsiVVNFUiJdLCJ2ZXJpZmllZCI6dHJ1ZSwiaWF0IjoxNzkzMDM5ODgyLCJleHAiOjE3OTMwNDE2ODJ9.Qcm4pKMMBjj7g4oY8aH2TkZrA47ncvjcxGzSqGVANpY",
+    "refreshToken": "3af27380-7f28-4e25-b852-12f8ae1045ea",
+    "expiresIn": 1793041682033
+}
+================================================================================
+======================================== REQUEST ========================================
+[32mpytest tests/test_movies.py::test_delete_movies[super_admin-200][0m
+curl -X DELETE 'https://api.dev-cinescope.coconutqa.ru/movies/79261' \
+-H 'User-Agent: python-requests/2.34.2' \
+-H 'Accept-Encoding: gzip, deflate' \
+-H 'Accept: application/json' \
+-H 'Connection: keep-alive' \
+-H 'Content-Type: application/json' \
+-H 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImZmZjcyYjhiLTYwNzEtNDZhMy1iNmM1LWJmMmNjNWY3ODcxOCIsImVtYWlsIjoiYXBpMUBnbWFpbC5jb20iLCJyb2xlcyI6WyJVU0VSIiwiQURNSU4iLCJTVVBFUl9BRE1JTiJdLCJ2ZXJpZmllZCI6dHJ1ZSwiaWF0IjoxNzkzMDM5ODgxLCJleHAiOjE3OTMwNDE2ODF9.igjiENp8J6FarsQJIg81FMSgKHOU8INN4gGqzRk9l4M' \
+-H 'Content-Length: 0' \
+
+
+======================================== RESPONSE ========================================
+	STATUS_CODE: [32m200[0m
+	TIME(ms): 73.16
+	DATA:
+{
+    "id": 79261,
+    "name": "Still health claim",
+    "price": 222,
+    "description": "environment pick myself find election writer when draw gas learn",
+    "imageUrl": "https://placekittens.com/244/441",
+    "location": "MSK",
+    "published": true,
+    "rating": 0,
+    "genreId": 186,
+    "createdAt": "2026-10-26T18:38:01.409Z",
+    "reviews": [],
+    "genre": {
+        "name": "mouth"
+    }
+}
+================================================================================
