@@ -1,0 +1,173 @@
+======================================== REQUEST ========================================
+[32mpytest tests/test_movies.py::test_get_movies[0m
+curl -X GET 'https://api.dev-cinescope.coconutqa.ru/movies' \
+-H 'User-Agent: python-requests/2.34.2' \
+-H 'Accept-Encoding: gzip, deflate' \
+-H 'Accept: application/json' \
+-H 'Connection: keep-alive' \
+-H 'Content-Type: application/json' \
+
+
+======================================== RESPONSE ========================================
+	STATUS_CODE: [32m200[0m
+	TIME(ms): 192.68
+	DATA:
+{
+    "movies": [
+        {
+            "id": 836,
+            "name": "Виртуальная и многозадачная возможность",
+            "description": "Означать тюрьма тута магазин адвокат. Задержать песенка порядок чувство легко бок.",
+            "genreId": 7,
+            "imageUrl": "https://www.oao.biz/",
+            "price": 468,
+            "rating": 0,
+            "location": "SPB",
+            "published": true,
+            "createdAt": "2025-05-22T15:40:55.013Z",
+            "genre": {
+                "name": "Мюзикл"
+            }
+        },
+        {
+            "id": 885,
+            "name": "Information course.",
+            "description": "How product able. Today perhaps product however onto PM anything.\nGun result per. Who affect feel once per away. Easy second something who.",
+            "genreId": 8,
+            "imageUrl": "https://placekitten.com/905/911",
+            "price": 713,
+            "rating": 1,
+            "location": "SPB",
+            "published": true,
+            "createdAt": "2025-05-23T11:38:15.515Z",
+            "genre": {
+                "name": "Фэнтези"
+            }
+        },
+        {
+            "id": 897,
+            "name": "Автономный и логистический интерфейс",
+            "description": "Тесно дружно мелочь солнце функция задержать. Пропаганда подземный мальчишка решение провинция боец.\nПодземный снимать основание успокоиться. Какой металл миллиард советовать.",
+            "genreId": 10,
+            "imageUrl": "https://oktoblu.com/",
+            "price": 746,
+            "rating": 0,
+            "location": "SPB",
+            "published": true,
+            "createdAt": "2025-05-23T12:31:07.292Z",
+            "genre": {
+                "name": "Военный"
+            }
+        },
+        {
+            "id": 1026,
+            "name": "Say.",
+            "description": "Return join himself quickly rate support ask society. Free property ok. Course no purpose ago address myself. Project institution strategy.\nTerm condition child no. Time section different drug full.",
+            "genreId": 8,
+            "imageUrl": "https://placekitten.com/450/543",
+            "price": 276,
+            "rating": 0,
+            "location": "SPB",
+            "published": true,
+            "createdAt": "2025-05-24T04:28:23.404Z",
+            "genre": {
+                "name": "Фэнтези"
+            }
+        },
+        {
+            "id": 1095,
+            "name": "Theory apply.",
+            "description": "Charge news mention eat computer show. Government imagine lose interest attack loss. Product painting accept best sister continue.\nBlood operation look seek growth. President fill you north do.",
+            "genreId": 7,
+            "imageUrl": "https://placekitten.com/808/445",
+            "price": 170,
+            "rating": 0,
+            "location": "SPB",
+            "published": true,
+            "createdAt": "2025-05-26T11:22:29.489Z",
+            "genre": {
+                "name": "Мюзикл"
+            }
+        },
+        {
+            "id": 1135,
+            "name": "Best hand.",
+            "description": "Plan general space help only mean marriage. Read chair would success week fear care like.\nAny must phone attention quality. Positive water pay clearly.\nMarriage marriage trip could.",
+            "genreId": 9,
+            "imageUrl": "https://dummyimage.com/114x458",
+            "price": 770,
+            "rating": 0,
+            "location": "SPB",
+            "published": true,
+            "createdAt": "2025-05-26T14:54:00.560Z",
+            "genre": {
+                "name": "Анимация"
+            }
+        },
+        {
+            "id": 1276,
+            "name": "SeaShell opinion",
+            "description": "Film SeaShell opinion description",
+            "genreId": 7,
+            "imageUrl": "https://image.url",
+            "price": 787,
+            "rating": 0,
+            "location": "SPB",
+            "published": true,
+            "createdAt": "2025-05-27T11:21:09.218Z",
+            "genre": {
+                "name": "Мюзикл"
+            }
+        },
+        {
+            "id": 1308,
+            "name": "The last Geochemist",
+            "description": "Film The last Geochemist description",
+            "genreId": 7,
+            "imageUrl": null,
+            "price": 478,
+            "rating": 0,
+            "location": "SPB",
+            "published": true,
+            "createdAt": "2025-05-27T17:18:16.876Z",
+            "genre": {
+                "name": "Мюзикл"
+            }
+        },
+        {
+            "id": 1318,
+            "name": "Yes small.",
+            "description": "Wrong eight last also early maybe. Effect yard rock agreement.\nFight work adult area explain. Else agent determine stuff model mention responsibility most.",
+            "genreId": 9,
+            "imageUrl": "https://placekitten.com/534/831",
+            "price": 590,
+            "rating": 0,
+            "location": "SPB",
+            "published": true,
+            "createdAt": "2025-05-27T17:29:59.076Z",
+            "genre": {
+                "name": "Анимация"
+            }
+        },
+        {
+            "id": 1320,
+            "name": "Vote season.",
+            "description": "Month water be blood. Agreement water bag clearly drop recent article. Media scientist four something order.",
+            "genreId": 9,
+            "imageUrl": "https://picsum.photos/765/473",
+            "price": 801,
+            "rating": 0,
+            "location": "SPB",
+            "published": true,
+            "createdAt": "2025-05-27T17:30:01.134Z",
+            "genre": {
+                "name": "Анимация"
+            }
+        }
+    ],
+    "count": 3145,
+    "page": 1,
+    "pageSize": 10,
+    "pageCount": 315
+}
+================================================================================

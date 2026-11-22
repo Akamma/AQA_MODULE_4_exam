@@ -1,0 +1,119 @@
+======================================== REQUEST ========================================
+[32mpytest tests/test_movies.py::test_created_movies_without_admin_creds (setup)[0m
+curl -X POST 'https://auth.dev-cinescope.coconutqa.ru/login' \
+-H 'User-Agent: python-requests/2.34.2' \
+-H 'Accept-Encoding: gzip, deflate' \
+-H 'Accept: application/json' \
+-H 'Connection: keep-alive' \
+-H 'Content-Type: application/json' \
+-H 'Content-Length: 53' \
+-d '{"email": "api1@gmail.com", "password": "asdqwe123Q"}' 
+
+
+======================================== RESPONSE ========================================
+	STATUS_CODE: [32m201[0m
+	TIME(ms): 295.87
+	DATA:
+{
+    "user": {
+        "id": "fff72b8b-6071-46a3-b6c5-bf2cc5f78718",
+        "email": "api1@gmail.com",
+        "fullName": "Donald Diaz",
+        "roles": [
+            "USER",
+            "ADMIN",
+            "SUPER_ADMIN"
+        ]
+    },
+    "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImZmZjcyYjhiLTYwNzEtNDZhMy1iNmM1LWJmMmNjNWY3ODcxOCIsImVtYWlsIjoiYXBpMUBnbWFpbC5jb20iLCJyb2xlcyI6WyJVU0VSIiwiQURNSU4iLCJTVVBFUl9BRE1JTiJdLCJ2ZXJpZmllZCI6dHJ1ZSwiaWF0IjoxNzkzMDM5ODc3LCJleHAiOjE3OTMwNDE2Nzd9.taHUUB7TiPs52j3Ea6M3rfb3hyNENAX37-jIV31v78w",
+    "refreshToken": "5e383148-b5c0-4923-8131-045225fc5736",
+    "expiresIn": 1793041677638
+}
+================================================================================
+
+
+======================================== REQUEST ========================================
+[32mpytest tests/test_movies.py::test_created_movies_without_admin_creds (setup)[0m
+curl -X POST 'https://auth.dev-cinescope.coconutqa.ru/user' \
+-H 'User-Agent: python-requests/2.34.2' \
+-H 'Accept-Encoding: gzip, deflate' \
+-H 'Accept: application/json' \
+-H 'Connection: keep-alive' \
+-H 'Content-Type: application/json' \
+-H 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImZmZjcyYjhiLTYwNzEtNDZhMy1iNmM1LWJmMmNjNWY3ODcxOCIsImVtYWlsIjoiYXBpMUBnbWFpbC5jb20iLCJyb2xlcyI6WyJVU0VSIiwiQURNSU4iLCJTVVBFUl9BRE1JTiJdLCJ2ZXJpZmllZCI6dHJ1ZSwiaWF0IjoxNzkzMDM5ODc3LCJleHAiOjE3OTMwNDE2Nzd9.taHUUB7TiPs52j3Ea6M3rfb3hyNENAX37-jIV31v78w' \
+-H 'Cookie: refresh_token=5e383148-b5c0-4923-8131-045225fc5736' \
+-H 'Content-Length: 182' \
+-d '{"email": "u088d20acfb3e4a4a@gmail.com", "fullName": "Jennifer Parks", "password": "j8JAVv9O5R", "passwordRepeat": "j8JAVv9O5R", "roles": ["USER"], "verified": true, "banned": false}' 
+
+
+======================================== RESPONSE ========================================
+	STATUS_CODE: [32m201[0m
+	TIME(ms): 187.84
+	DATA:
+{
+    "id": "60029840-53d4-45dd-ac36-288f19e4a7b7",
+    "email": "u088d20acfb3e4a4a@gmail.com",
+    "fullName": "Jennifer Parks",
+    "verified": true,
+    "roles": [
+        "USER"
+    ],
+    "createdAt": "2026-10-26T18:37:57.827Z"
+}
+================================================================================
+
+
+======================================== REQUEST ========================================
+[32mpytest tests/test_movies.py::test_created_movies_without_admin_creds (setup)[0m
+curl -X POST 'https://auth.dev-cinescope.coconutqa.ru/login' \
+-H 'User-Agent: python-requests/2.34.2' \
+-H 'Accept-Encoding: gzip, deflate' \
+-H 'Accept: application/json' \
+-H 'Connection: keep-alive' \
+-H 'Content-Type: application/json' \
+-H 'Content-Length: 66' \
+-d '{"email": "u088d20acfb3e4a4a@gmail.com", "password": "j8JAVv9O5R"}' 
+
+
+======================================== RESPONSE ========================================
+	STATUS_CODE: [32m201[0m
+	TIME(ms): 304.18
+	DATA:
+{
+    "user": {
+        "id": "60029840-53d4-45dd-ac36-288f19e4a7b7",
+        "email": "u088d20acfb3e4a4a@gmail.com",
+        "fullName": "Jennifer Parks",
+        "roles": [
+            "USER"
+        ]
+    },
+    "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwMDI5ODQwLTUzZDQtNDVkZC1hYzM2LTI4OGYxOWU0YTdiNyIsImVtYWlsIjoidTA4OGQyMGFjZmIzZTRhNGFAZ21haWwuY29tIiwicm9sZXMiOlsiVVNFUiJdLCJ2ZXJpZmllZCI6dHJ1ZSwiaWF0IjoxNzkzMDM5ODc4LCJleHAiOjE3OTMwNDE2Nzh9.7CyXPXjqWEFSUPtopoX_kxUgICZvZ8v23oZBX3xr-sI",
+    "refreshToken": "cfdf5ee2-5d1d-4147-8a12-334d3489a040",
+    "expiresIn": 1793041678128
+}
+================================================================================
+
+
+======================================== REQUEST ========================================
+[32mpytest tests/test_movies.py::test_created_movies_without_admin_creds (setup)[0m
+curl -X POST 'https://api.dev-cinescope.coconutqa.ru/movies' \
+-H 'User-Agent: python-requests/2.34.2' \
+-H 'Accept-Encoding: gzip, deflate' \
+-H 'Accept: application/json' \
+-H 'Connection: keep-alive' \
+-H 'Content-Type: application/json' \
+-H 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwMDI5ODQwLTUzZDQtNDVkZC1hYzM2LTI4OGYxOWU0YTdiNyIsImVtYWlsIjoidTA4OGQyMGFjZmIzZTRhNGFAZ21haWwuY29tIiwicm9sZXMiOlsiVVNFUiJdLCJ2ZXJpZmllZCI6dHJ1ZSwiaWF0IjoxNzkzMDM5ODc4LCJleHAiOjE3OTMwNDE2Nzh9.7CyXPXjqWEFSUPtopoX_kxUgICZvZ8v23oZBX3xr-sI' \
+-H 'Content-Length: 228' \
+-d '{"name": "Offer traditional hit", "imageUrl": "https://dummyimage.com/895x104", "price": 706, "description": "role office outside follow care order leg though eight either", "location": "SPB", "published": false, "genreId": 186}' 
+
+
+======================================== RESPONSE ========================================
+	STATUS_CODE: [31m403[0m
+	TIME(ms): 150.97
+	DATA: [31m{
+    "message": "Forbidden resource",
+    "error": "Forbidden",
+    "statusCode": 403
+}[0m
+================================================================================

@@ -1,0 +1,115 @@
+======================================== REQUEST ========================================
+[32mpytest tests/test_movies.py::test_get_film_by_invalid_id (setup)[0m
+curl -X POST 'https://auth.dev-cinescope.coconutqa.ru/login' \
+-H 'User-Agent: python-requests/2.34.2' \
+-H 'Accept-Encoding: gzip, deflate' \
+-H 'Accept: application/json' \
+-H 'Connection: keep-alive' \
+-H 'Content-Type: application/json' \
+-H 'Content-Length: 53' \
+-d '{"email": "api1@gmail.com", "password": "asdqwe123Q"}' 
+
+
+======================================== RESPONSE ========================================
+	STATUS_CODE: [32m201[0m
+	TIME(ms): 373.31
+	DATA:
+{
+    "user": {
+        "id": "fff72b8b-6071-46a3-b6c5-bf2cc5f78718",
+        "email": "api1@gmail.com",
+        "fullName": "Donald Diaz",
+        "roles": [
+            "USER",
+            "ADMIN",
+            "SUPER_ADMIN"
+        ]
+    },
+    "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImZmZjcyYjhiLTYwNzEtNDZhMy1iNmM1LWJmMmNjNWY3ODcxOCIsImVtYWlsIjoiYXBpMUBnbWFpbC5jb20iLCJyb2xlcyI6WyJVU0VSIiwiQURNSU4iLCJTVVBFUl9BRE1JTiJdLCJ2ZXJpZmllZCI6dHJ1ZSwiaWF0IjoxNzkzMDM5ODc5LCJleHAiOjE3OTMwNDE2Nzl9.T4McE6mf83PuTFtcmk_ui7W3R6gc7JaVIIL6OY-LCoE",
+    "refreshToken": "8c4a8ab1-2891-4856-8066-ae9681d145b0",
+    "expiresIn": 1793041679735
+}
+================================================================================
+
+
+======================================== REQUEST ========================================
+[32mpytest tests/test_movies.py::test_get_film_by_invalid_id (setup)[0m
+curl -X POST 'https://auth.dev-cinescope.coconutqa.ru/user' \
+-H 'User-Agent: python-requests/2.34.2' \
+-H 'Accept-Encoding: gzip, deflate' \
+-H 'Accept: application/json' \
+-H 'Connection: keep-alive' \
+-H 'Content-Type: application/json' \
+-H 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImZmZjcyYjhiLTYwNzEtNDZhMy1iNmM1LWJmMmNjNWY3ODcxOCIsImVtYWlsIjoiYXBpMUBnbWFpbC5jb20iLCJyb2xlcyI6WyJVU0VSIiwiQURNSU4iLCJTVVBFUl9BRE1JTiJdLCJ2ZXJpZmllZCI6dHJ1ZSwiaWF0IjoxNzkzMDM5ODc5LCJleHAiOjE3OTMwNDE2Nzl9.T4McE6mf83PuTFtcmk_ui7W3R6gc7JaVIIL6OY-LCoE' \
+-H 'Cookie: refresh_token=8c4a8ab1-2891-4856-8066-ae9681d145b0' \
+-H 'Content-Length: 184' \
+-d '{"email": "ub39a99835a494fb1@gmail.com", "fullName": "Michael Thompson", "password": "3VtLpjGg1A", "passwordRepeat": "3VtLpjGg1A", "roles": ["USER"], "verified": true, "banned": false}' 
+
+
+======================================== RESPONSE ========================================
+	STATUS_CODE: [32m201[0m
+	TIME(ms): 182.66
+	DATA:
+{
+    "id": "6544cf3e-c5b4-459a-b651-f87c515a1eb0",
+    "email": "ub39a99835a494fb1@gmail.com",
+    "fullName": "Michael Thompson",
+    "verified": true,
+    "roles": [
+        "USER"
+    ],
+    "createdAt": "2026-10-26T18:37:59.923Z"
+}
+================================================================================
+
+
+======================================== REQUEST ========================================
+[32mpytest tests/test_movies.py::test_get_film_by_invalid_id (setup)[0m
+curl -X POST 'https://auth.dev-cinescope.coconutqa.ru/login' \
+-H 'User-Agent: python-requests/2.34.2' \
+-H 'Accept-Encoding: gzip, deflate' \
+-H 'Accept: application/json' \
+-H 'Connection: keep-alive' \
+-H 'Content-Type: application/json' \
+-H 'Content-Length: 66' \
+-d '{"email": "ub39a99835a494fb1@gmail.com", "password": "3VtLpjGg1A"}' 
+
+
+======================================== RESPONSE ========================================
+	STATUS_CODE: [32m201[0m
+	TIME(ms): 310.68
+	DATA:
+{
+    "user": {
+        "id": "6544cf3e-c5b4-459a-b651-f87c515a1eb0",
+        "email": "ub39a99835a494fb1@gmail.com",
+        "fullName": "Michael Thompson",
+        "roles": [
+            "USER"
+        ]
+    },
+    "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1NDRjZjNlLWM1YjQtNDU5YS1iNjUxLWY4N2M1MTVhMWViMCIsImVtYWlsIjoidWIzOWE5OTgzNWE0OTRmYjFAZ21haWwuY29tIiwicm9sZXMiOlsiVVNFUiJdLCJ2ZXJpZmllZCI6dHJ1ZSwiaWF0IjoxNzkzMDM5ODgwLCJleHAiOjE3OTMwNDE2ODB9.BEKb-4HA191l4MYZx3QfYeS2QLuca2vdSxSHGZ_e24I",
+    "refreshToken": "f5c3d4d8-183f-402e-8ea6-1489a5d61fd7",
+    "expiresIn": 1793041680231
+}
+================================================================================
+======================================== REQUEST ========================================
+[32mpytest tests/test_movies.py::test_get_film_by_invalid_id[0m
+curl -X GET 'https://api.dev-cinescope.coconutqa.ru/movies/9999999' \
+-H 'User-Agent: python-requests/2.34.2' \
+-H 'Accept-Encoding: gzip, deflate' \
+-H 'Accept: application/json' \
+-H 'Connection: keep-alive' \
+-H 'Content-Type: application/json' \
+-H 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1NDRjZjNlLWM1YjQtNDU5YS1iNjUxLWY4N2M1MTVhMWViMCIsImVtYWlsIjoidWIzOWE5OTgzNWE0OTRmYjFAZ21haWwuY29tIiwicm9sZXMiOlsiVVNFUiJdLCJ2ZXJpZmllZCI6dHJ1ZSwiaWF0IjoxNzkzMDM5ODgwLCJleHAiOjE3OTMwNDE2ODB9.BEKb-4HA191l4MYZx3QfYeS2QLuca2vdSxSHGZ_e24I' \
+
+
+======================================== RESPONSE ========================================
+	STATUS_CODE: [31m404[0m
+	TIME(ms): 132.16
+	DATA: [31m{
+    "message": "Фильм не найден",
+    "error": "Not Found",
+    "statusCode": 404
+}[0m
+================================================================================

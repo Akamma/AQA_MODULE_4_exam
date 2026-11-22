@@ -1,0 +1,151 @@
+======================================== REQUEST ========================================
+[32mpytest tests/test_movies.py::test_delete_movies[common_user-403] (setup)[0m
+curl -X POST 'https://auth.dev-cinescope.coconutqa.ru/login' \
+-H 'User-Agent: python-requests/2.34.2' \
+-H 'Accept-Encoding: gzip, deflate' \
+-H 'Accept: application/json' \
+-H 'Connection: keep-alive' \
+-H 'Content-Type: application/json' \
+-H 'Content-Length: 53' \
+-d '{"email": "api1@gmail.com", "password": "asdqwe123Q"}' 
+
+
+======================================== RESPONSE ========================================
+	STATUS_CODE: [32m201[0m
+	TIME(ms): 406.5
+	DATA:
+{
+    "user": {
+        "id": "fff72b8b-6071-46a3-b6c5-bf2cc5f78718",
+        "email": "api1@gmail.com",
+        "fullName": "Donald Diaz",
+        "roles": [
+            "USER",
+            "ADMIN",
+            "SUPER_ADMIN"
+        ]
+    },
+    "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImZmZjcyYjhiLTYwNzEtNDZhMy1iNmM1LWJmMmNjNWY3ODcxOCIsImVtYWlsIjoiYXBpMUBnbWFpbC5jb20iLCJyb2xlcyI6WyJVU0VSIiwiQURNSU4iLCJTVVBFUl9BRE1JTiJdLCJ2ZXJpZmllZCI6dHJ1ZSwiaWF0IjoxNzkzMDM5ODgyLCJleHAiOjE3OTMwNDE2ODJ9.-QQ3flZlKuZsFeItoGFNB0XTHMKgiTrm07xoF8Al8Aw",
+    "refreshToken": "f7975641-a43c-4d93-8a34-9cc811712eb6",
+    "expiresIn": 1793041682543
+}
+================================================================================
+
+
+======================================== REQUEST ========================================
+[32mpytest tests/test_movies.py::test_delete_movies[common_user-403] (setup)[0m
+curl -X POST 'https://api.dev-cinescope.coconutqa.ru/movies' \
+-H 'User-Agent: python-requests/2.34.2' \
+-H 'Accept-Encoding: gzip, deflate' \
+-H 'Accept: application/json' \
+-H 'Connection: keep-alive' \
+-H 'Content-Type: application/json' \
+-H 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImZmZjcyYjhiLTYwNzEtNDZhMy1iNmM1LWJmMmNjNWY3ODcxOCIsImVtYWlsIjoiYXBpMUBnbWFpbC5jb20iLCJyb2xlcyI6WyJVU0VSIiwiQURNSU4iLCJTVVBFUl9BRE1JTiJdLCJ2ZXJpZmllZCI6dHJ1ZSwiaWF0IjoxNzkzMDM5ODgyLCJleHAiOjE3OTMwNDE2ODJ9.-QQ3flZlKuZsFeItoGFNB0XTHMKgiTrm07xoF8Al8Aw' \
+-H 'Content-Length: 224' \
+-d '{"name": "Window push general", "imageUrl": "https://placekittens.com/465/569", "price": 271, "description": "country eye want capital high star author instead yet old", "location": "SPB", "published": false, "genreId": 186}' 
+
+
+======================================== RESPONSE ========================================
+	STATUS_CODE: [32m201[0m
+	TIME(ms): 153.08
+	DATA:
+{
+    "id": 79262,
+    "name": "Window push general",
+    "price": 271,
+    "description": "country eye want capital high star author instead yet old",
+    "imageUrl": "https://placekittens.com/465/569",
+    "location": "SPB",
+    "published": false,
+    "rating": 0,
+    "genreId": 186,
+    "createdAt": "2026-10-26T18:38:02.695Z",
+    "genre": {
+        "name": "mouth"
+    }
+}
+================================================================================
+
+
+======================================== REQUEST ========================================
+[32mpytest tests/test_movies.py::test_delete_movies[common_user-403] (setup)[0m
+curl -X POST 'https://auth.dev-cinescope.coconutqa.ru/user' \
+-H 'User-Agent: python-requests/2.34.2' \
+-H 'Accept-Encoding: gzip, deflate' \
+-H 'Accept: application/json' \
+-H 'Connection: keep-alive' \
+-H 'Content-Type: application/json' \
+-H 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImZmZjcyYjhiLTYwNzEtNDZhMy1iNmM1LWJmMmNjNWY3ODcxOCIsImVtYWlsIjoiYXBpMUBnbWFpbC5jb20iLCJyb2xlcyI6WyJVU0VSIiwiQURNSU4iLCJTVVBFUl9BRE1JTiJdLCJ2ZXJpZmllZCI6dHJ1ZSwiaWF0IjoxNzkzMDM5ODgyLCJleHAiOjE3OTMwNDE2ODJ9.-QQ3flZlKuZsFeItoGFNB0XTHMKgiTrm07xoF8Al8Aw' \
+-H 'Cookie: refresh_token=f7975641-a43c-4d93-8a34-9cc811712eb6' \
+-H 'Content-Length: 179' \
+-d '{"email": "u5561edfe00c846bb@gmail.com", "fullName": "Ryan Ramsey", "password": "43fUKjdoHy", "passwordRepeat": "43fUKjdoHy", "roles": ["USER"], "verified": true, "banned": false}' 
+
+
+======================================== RESPONSE ========================================
+	STATUS_CODE: [32m201[0m
+	TIME(ms): 321.21
+	DATA:
+{
+    "id": "e5f9d78f-a9d9-42aa-b4a4-ce34d664ff78",
+    "email": "u5561edfe00c846bb@gmail.com",
+    "fullName": "Ryan Ramsey",
+    "verified": true,
+    "roles": [
+        "USER"
+    ],
+    "createdAt": "2026-10-26T18:38:03.021Z"
+}
+================================================================================
+
+
+======================================== REQUEST ========================================
+[32mpytest tests/test_movies.py::test_delete_movies[common_user-403] (setup)[0m
+curl -X POST 'https://auth.dev-cinescope.coconutqa.ru/login' \
+-H 'User-Agent: python-requests/2.34.2' \
+-H 'Accept-Encoding: gzip, deflate' \
+-H 'Accept: application/json' \
+-H 'Connection: keep-alive' \
+-H 'Content-Type: application/json' \
+-H 'Content-Length: 66' \
+-d '{"email": "u5561edfe00c846bb@gmail.com", "password": "43fUKjdoHy"}' 
+
+
+======================================== RESPONSE ========================================
+	STATUS_CODE: [32m201[0m
+	TIME(ms): 404.39
+	DATA:
+{
+    "user": {
+        "id": "e5f9d78f-a9d9-42aa-b4a4-ce34d664ff78",
+        "email": "u5561edfe00c846bb@gmail.com",
+        "fullName": "Ryan Ramsey",
+        "roles": [
+            "USER"
+        ]
+    },
+    "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImU1ZjlkNzhmLWE5ZDktNDJhYS1iNGE0LWNlMzRkNjY0ZmY3OCIsImVtYWlsIjoidTU1NjFlZGZlMDBjODQ2YmJAZ21haWwuY29tIiwicm9sZXMiOlsiVVNFUiJdLCJ2ZXJpZmllZCI6dHJ1ZSwiaWF0IjoxNzkzMDM5ODgzLCJleHAiOjE3OTMwNDE2ODN9.sUHxrOBHrXMn6IN7rYpFTpJqOImwD9LWG70ilLI6FKA",
+    "refreshToken": "b86ee56c-6a72-4f9c-a620-98ab804c11f0",
+    "expiresIn": 1793041683434
+}
+================================================================================
+======================================== REQUEST ========================================
+[32mpytest tests/test_movies.py::test_delete_movies[common_user-403][0m
+curl -X DELETE 'https://api.dev-cinescope.coconutqa.ru/movies/79262' \
+-H 'User-Agent: python-requests/2.34.2' \
+-H 'Accept-Encoding: gzip, deflate' \
+-H 'Accept: application/json' \
+-H 'Connection: keep-alive' \
+-H 'Content-Type: application/json' \
+-H 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImU1ZjlkNzhmLWE5ZDktNDJhYS1iNGE0LWNlMzRkNjY0ZmY3OCIsImVtYWlsIjoidTU1NjFlZGZlMDBjODQ2YmJAZ21haWwuY29tIiwicm9sZXMiOlsiVVNFUiJdLCJ2ZXJpZmllZCI6dHJ1ZSwiaWF0IjoxNzkzMDM5ODgzLCJleHAiOjE3OTMwNDE2ODN9.sUHxrOBHrXMn6IN7rYpFTpJqOImwD9LWG70ilLI6FKA' \
+-H 'Content-Length: 0' \
+
+
+======================================== RESPONSE ========================================
+	STATUS_CODE: [31m403[0m
+	TIME(ms): 154.25
+	DATA: [31m{
+    "message": "Forbidden resource",
+    "error": "Forbidden",
+    "statusCode": 403
+}[0m
+================================================================================

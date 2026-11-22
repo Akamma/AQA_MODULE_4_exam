@@ -1,0 +1,89 @@
+======================================== REQUEST ========================================
+[32mpytest tests/test_movies.py::test_created_movies_already_exists (setup)[0m
+curl -X POST 'https://auth.dev-cinescope.coconutqa.ru/login' \
+-H 'User-Agent: python-requests/2.34.2' \
+-H 'Accept-Encoding: gzip, deflate' \
+-H 'Accept: application/json' \
+-H 'Connection: keep-alive' \
+-H 'Content-Type: application/json' \
+-H 'Content-Length: 53' \
+-d '{"email": "api1@gmail.com", "password": "asdqwe123Q"}' 
+
+
+======================================== RESPONSE ========================================
+	STATUS_CODE: [32m201[0m
+	TIME(ms): 327.91
+	DATA:
+{
+    "user": {
+        "id": "fff72b8b-6071-46a3-b6c5-bf2cc5f78718",
+        "email": "api1@gmail.com",
+        "fullName": "Donald Diaz",
+        "roles": [
+            "USER",
+            "ADMIN",
+            "SUPER_ADMIN"
+        ]
+    },
+    "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImZmZjcyYjhiLTYwNzEtNDZhMy1iNmM1LWJmMmNjNWY3ODcxOCIsImVtYWlsIjoiYXBpMUBnbWFpbC5jb20iLCJyb2xlcyI6WyJVU0VSIiwiQURNSU4iLCJTVVBFUl9BRE1JTiJdLCJ2ZXJpZmllZCI6dHJ1ZSwiaWF0IjoxNzkzMDM5ODc5LCJleHAiOjE3OTMwNDE2Nzl9.T4McE6mf83PuTFtcmk_ui7W3R6gc7JaVIIL6OY-LCoE",
+    "refreshToken": "730d9016-38ea-486a-8a1e-621fb51182ad",
+    "expiresIn": 1793041679130
+}
+================================================================================
+
+
+======================================== REQUEST ========================================
+[32mpytest tests/test_movies.py::test_created_movies_already_exists (setup)[0m
+curl -X POST 'https://api.dev-cinescope.coconutqa.ru/movies' \
+-H 'User-Agent: python-requests/2.34.2' \
+-H 'Accept-Encoding: gzip, deflate' \
+-H 'Accept: application/json' \
+-H 'Connection: keep-alive' \
+-H 'Content-Type: application/json' \
+-H 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImZmZjcyYjhiLTYwNzEtNDZhMy1iNmM1LWJmMmNjNWY3ODcxOCIsImVtYWlsIjoiYXBpMUBnbWFpbC5jb20iLCJyb2xlcyI6WyJVU0VSIiwiQURNSU4iLCJTVVBFUl9BRE1JTiJdLCJ2ZXJpZmllZCI6dHJ1ZSwiaWF0IjoxNzkzMDM5ODc5LCJleHAiOjE3OTMwNDE2Nzl9.T4McE6mf83PuTFtcmk_ui7W3R6gc7JaVIIL6OY-LCoE' \
+-H 'Content-Length: 234' \
+-d '{"name": "Mouth seven artist", "imageUrl": "https://placekittens.com/1018/785", "price": 329, "description": "relationship wall scene item use find cell responsibility state gas", "location": "SPB", "published": false, "genreId": 186}' 
+
+
+======================================== RESPONSE ========================================
+	STATUS_CODE: [32m201[0m
+	TIME(ms): 159.36
+	DATA:
+{
+    "id": 79260,
+    "name": "Mouth seven artist",
+    "price": 329,
+    "description": "relationship wall scene item use find cell responsibility state gas",
+    "imageUrl": "https://placekittens.com/1018/785",
+    "location": "SPB",
+    "published": false,
+    "rating": 0,
+    "genreId": 186,
+    "createdAt": "2026-10-26T18:37:59.287Z",
+    "genre": {
+        "name": "mouth"
+    }
+}
+================================================================================
+======================================== REQUEST ========================================
+[32mpytest tests/test_movies.py::test_created_movies_already_exists[0m
+curl -X POST 'https://api.dev-cinescope.coconutqa.ru/movies' \
+-H 'User-Agent: python-requests/2.34.2' \
+-H 'Accept-Encoding: gzip, deflate' \
+-H 'Accept: application/json' \
+-H 'Connection: keep-alive' \
+-H 'Content-Type: application/json' \
+-H 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImZmZjcyYjhiLTYwNzEtNDZhMy1iNmM1LWJmMmNjNWY3ODcxOCIsImVtYWlsIjoiYXBpMUBnbWFpbC5jb20iLCJyb2xlcyI6WyJVU0VSIiwiQURNSU4iLCJTVVBFUl9BRE1JTiJdLCJ2ZXJpZmllZCI6dHJ1ZSwiaWF0IjoxNzkzMDM5ODc5LCJleHAiOjE3OTMwNDE2Nzl9.T4McE6mf83PuTFtcmk_ui7W3R6gc7JaVIIL6OY-LCoE' \
+-H 'Content-Length: 234' \
+-d '{"name": "Mouth seven artist", "imageUrl": "https://placekittens.com/1018/785", "price": 329, "description": "relationship wall scene item use find cell responsibility state gas", "location": "SPB", "published": false, "genreId": 186}' 
+
+
+======================================== RESPONSE ========================================
+	STATUS_CODE: [31m409[0m
+	TIME(ms): 54.95
+	DATA: [31m{
+    "message": "Фильм с таким названием уже существует",
+    "error": "Conflict",
+    "statusCode": 409
+}[0m
+================================================================================

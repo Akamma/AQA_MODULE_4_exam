@@ -1,0 +1,99 @@
+======================================== REQUEST ========================================
+[32mpytest tests/test_movies.py::test_created_movies_with_super_admin_creds (setup)[0m
+curl -X POST 'https://auth.dev-cinescope.coconutqa.ru/login' \
+-H 'User-Agent: python-requests/2.34.2' \
+-H 'Accept-Encoding: gzip, deflate' \
+-H 'Accept: application/json' \
+-H 'Connection: keep-alive' \
+-H 'Content-Type: application/json' \
+-H 'Content-Length: 53' \
+-d '{"email": "api1@gmail.com", "password": "asdqwe123Q"}' 
+
+
+======================================== RESPONSE ========================================
+	STATUS_CODE: [32m201[0m
+	TIME(ms): 422.91
+	DATA:
+{
+    "user": {
+        "id": "fff72b8b-6071-46a3-b6c5-bf2cc5f78718",
+        "email": "api1@gmail.com",
+        "fullName": "Donald Diaz",
+        "roles": [
+            "USER",
+            "ADMIN",
+            "SUPER_ADMIN"
+        ]
+    },
+    "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImZmZjcyYjhiLTYwNzEtNDZhMy1iNmM1LWJmMmNjNWY3ODcxOCIsImVtYWlsIjoiYXBpMUBnbWFpbC5jb20iLCJyb2xlcyI6WyJVU0VSIiwiQURNSU4iLCJTVVBFUl9BRE1JTiJdLCJ2ZXJpZmllZCI6dHJ1ZSwiaWF0IjoxNzkzMDM5ODc0LCJleHAiOjE3OTMwNDE2NzR9.d-gbVdERLDR5202Cl6_ZjgEg5JPC7NUOUEBPrJCDFEQ",
+    "refreshToken": "f319e5e4-57c0-4a02-9761-f9607266b4cc",
+    "expiresIn": 1793041674732
+}
+================================================================================
+
+
+======================================== REQUEST ========================================
+[32mpytest tests/test_movies.py::test_created_movies_with_super_admin_creds (setup)[0m
+curl -X POST 'https://api.dev-cinescope.coconutqa.ru/movies' \
+-H 'User-Agent: python-requests/2.34.2' \
+-H 'Accept-Encoding: gzip, deflate' \
+-H 'Accept: application/json' \
+-H 'Connection: keep-alive' \
+-H 'Content-Type: application/json' \
+-H 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImZmZjcyYjhiLTYwNzEtNDZhMy1iNmM1LWJmMmNjNWY3ODcxOCIsImVtYWlsIjoiYXBpMUBnbWFpbC5jb20iLCJyb2xlcyI6WyJVU0VSIiwiQURNSU4iLCJTVVBFUl9BRE1JTiJdLCJ2ZXJpZmllZCI6dHJ1ZSwiaWF0IjoxNzkzMDM5ODc0LCJleHAiOjE3OTMwNDE2NzR9.d-gbVdERLDR5202Cl6_ZjgEg5JPC7NUOUEBPrJCDFEQ' \
+-H 'Content-Length: 240' \
+-d '{"name": "Standard others outside", "imageUrl": "https://dummyimage.com/802x145", "price": 109, "description": "each matter physical recently happen yet every strategy sense different", "location": "SPB", "published": false, "genreId": 186}' 
+
+
+======================================== RESPONSE ========================================
+	STATUS_CODE: [32m201[0m
+	TIME(ms): 248.83
+	DATA:
+{
+    "id": 79259,
+    "name": "Standard others outside",
+    "price": 109,
+    "description": "each matter physical recently happen yet every strategy sense different",
+    "imageUrl": "https://dummyimage.com/802x145",
+    "location": "SPB",
+    "published": false,
+    "rating": 0,
+    "genreId": 186,
+    "createdAt": "2026-10-26T18:37:54.981Z",
+    "genre": {
+        "name": "mouth"
+    }
+}
+================================================================================
+======================================== REQUEST ========================================
+[32mpytest tests/test_movies.py::test_created_movies_with_super_admin_creds[0m
+curl -X GET 'https://api.dev-cinescope.coconutqa.ru/movies/79259' \
+-H 'User-Agent: python-requests/2.34.2' \
+-H 'Accept-Encoding: gzip, deflate' \
+-H 'Accept: application/json' \
+-H 'Connection: keep-alive' \
+-H 'Content-Type: application/json' \
+-H 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImZmZjcyYjhiLTYwNzEtNDZhMy1iNmM1LWJmMmNjNWY3ODcxOCIsImVtYWlsIjoiYXBpMUBnbWFpbC5jb20iLCJyb2xlcyI6WyJVU0VSIiwiQURNSU4iLCJTVVBFUl9BRE1JTiJdLCJ2ZXJpZmllZCI6dHJ1ZSwiaWF0IjoxNzkzMDM5ODc0LCJleHAiOjE3OTMwNDE2NzR9.d-gbVdERLDR5202Cl6_ZjgEg5JPC7NUOUEBPrJCDFEQ' \
+
+
+======================================== RESPONSE ========================================
+	STATUS_CODE: [32m200[0m
+	TIME(ms): 55.13
+	DATA:
+{
+    "id": 79259,
+    "name": "Standard others outside",
+    "price": 109,
+    "description": "each matter physical recently happen yet every strategy sense different",
+    "imageUrl": "https://dummyimage.com/802x145",
+    "location": "SPB",
+    "published": false,
+    "rating": 0,
+    "genreId": 186,
+    "createdAt": "2026-10-26T18:37:54.981Z",
+    "reviews": [],
+    "genre": {
+        "name": "mouth"
+    }
+}
+================================================================================

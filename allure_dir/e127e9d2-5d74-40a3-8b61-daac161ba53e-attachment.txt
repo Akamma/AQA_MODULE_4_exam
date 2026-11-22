@@ -1,0 +1,23 @@
+======================================== REQUEST ========================================
+[32mpytest tests/test_movies.py::test_get_movies_with_invalid_params[0m
+curl -X GET 'https://api.dev-cinescope.coconutqa.ru/movies?pageSize=qwe' \
+-H 'User-Agent: python-requests/2.34.2' \
+-H 'Accept-Encoding: gzip, deflate' \
+-H 'Accept: application/json' \
+-H 'Connection: keep-alive' \
+-H 'Content-Type: application/json' \
+
+
+======================================== RESPONSE ========================================
+	STATUS_CODE: [31m400[0m
+	TIME(ms): 134.55
+	DATA: [31m{
+    "message": [
+        "Поле pageSize имеет максимальную величину 20",
+        "Поле pageSize имеет минимальную величину 1",
+        "Поле pageSize должно быть числом"
+    ],
+    "error": "Bad Request",
+    "statusCode": 400
+}[0m
+================================================================================

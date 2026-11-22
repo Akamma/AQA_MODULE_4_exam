@@ -1,0 +1,186 @@
+======================================== REQUEST ========================================
+[32mpytest tests/test_movies.py::test_update_movies_without_super_admin_creds (setup)[0m
+curl -X POST 'https://auth.dev-cinescope.coconutqa.ru/login' \
+-H 'User-Agent: python-requests/2.34.2' \
+-H 'Accept-Encoding: gzip, deflate' \
+-H 'Accept: application/json' \
+-H 'Connection: keep-alive' \
+-H 'Content-Type: application/json' \
+-H 'Content-Length: 53' \
+-d '{"email": "api1@gmail.com", "password": "asdqwe123Q"}' 
+
+
+======================================== RESPONSE ========================================
+	STATUS_CODE: [32m201[0m
+	TIME(ms): 331.12
+	DATA:
+{
+    "user": {
+        "id": "fff72b8b-6071-46a3-b6c5-bf2cc5f78718",
+        "email": "api1@gmail.com",
+        "fullName": "Donald Diaz",
+        "roles": [
+            "USER",
+            "ADMIN",
+            "SUPER_ADMIN"
+        ]
+    },
+    "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImZmZjcyYjhiLTYwNzEtNDZhMy1iNmM1LWJmMmNjNWY3ODcxOCIsImVtYWlsIjoiYXBpMUBnbWFpbC5jb20iLCJyb2xlcyI6WyJVU0VSIiwiQURNSU4iLCJTVVBFUl9BRE1JTiJdLCJ2ZXJpZmllZCI6dHJ1ZSwiaWF0IjoxNzkzMDM5ODg0LCJleHAiOjE3OTMwNDE2ODR9.NBcNMy8aXcO0AkH3GG3Q9CZV_KBTs1ugf7yV3oaDego",
+    "refreshToken": "632792af-47a1-4aa9-88a2-8b5f639d3553",
+    "expiresIn": 1793041684728
+}
+================================================================================
+
+
+======================================== REQUEST ========================================
+[32mpytest tests/test_movies.py::test_update_movies_without_super_admin_creds (setup)[0m
+curl -X POST 'https://auth.dev-cinescope.coconutqa.ru/user' \
+-H 'User-Agent: python-requests/2.34.2' \
+-H 'Accept-Encoding: gzip, deflate' \
+-H 'Accept: application/json' \
+-H 'Connection: keep-alive' \
+-H 'Content-Type: application/json' \
+-H 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImZmZjcyYjhiLTYwNzEtNDZhMy1iNmM1LWJmMmNjNWY3ODcxOCIsImVtYWlsIjoiYXBpMUBnbWFpbC5jb20iLCJyb2xlcyI6WyJVU0VSIiwiQURNSU4iLCJTVVBFUl9BRE1JTiJdLCJ2ZXJpZmllZCI6dHJ1ZSwiaWF0IjoxNzkzMDM5ODg0LCJleHAiOjE3OTMwNDE2ODR9.NBcNMy8aXcO0AkH3GG3Q9CZV_KBTs1ugf7yV3oaDego' \
+-H 'Cookie: refresh_token=632792af-47a1-4aa9-88a2-8b5f639d3553' \
+-H 'Content-Length: 182' \
+-d '{"email": "u7b67a9a5ca344a52@gmail.com", "fullName": "Jonathan Jones", "password": "b9KVdZvkgM", "passwordRepeat": "b9KVdZvkgM", "roles": ["USER"], "verified": true, "banned": false}' 
+
+
+======================================== RESPONSE ========================================
+	STATUS_CODE: [32m201[0m
+	TIME(ms): 192.61
+	DATA:
+{
+    "id": "2d03cf1b-0167-4be5-8c99-09a1a9147f15",
+    "email": "u7b67a9a5ca344a52@gmail.com",
+    "fullName": "Jonathan Jones",
+    "verified": true,
+    "roles": [
+        "USER"
+    ],
+    "createdAt": "2026-10-26T18:38:04.925Z"
+}
+================================================================================
+
+
+======================================== REQUEST ========================================
+[32mpytest tests/test_movies.py::test_update_movies_without_super_admin_creds (setup)[0m
+curl -X POST 'https://auth.dev-cinescope.coconutqa.ru/login' \
+-H 'User-Agent: python-requests/2.34.2' \
+-H 'Accept-Encoding: gzip, deflate' \
+-H 'Accept: application/json' \
+-H 'Connection: keep-alive' \
+-H 'Content-Type: application/json' \
+-H 'Content-Length: 66' \
+-d '{"email": "u7b67a9a5ca344a52@gmail.com", "password": "b9KVdZvkgM"}' 
+
+
+======================================== RESPONSE ========================================
+	STATUS_CODE: [32m201[0m
+	TIME(ms): 296.29
+	DATA:
+{
+    "user": {
+        "id": "2d03cf1b-0167-4be5-8c99-09a1a9147f15",
+        "email": "u7b67a9a5ca344a52@gmail.com",
+        "fullName": "Jonathan Jones",
+        "roles": [
+            "USER"
+        ]
+    },
+    "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjJkMDNjZjFiLTAxNjctNGJlNS04Yzk5LTA5YTFhOTE0N2YxNSIsImVtYWlsIjoidTdiNjdhOWE1Y2EzNDRhNTJAZ21haWwuY29tIiwicm9sZXMiOlsiVVNFUiJdLCJ2ZXJpZmllZCI6dHJ1ZSwiaWF0IjoxNzkzMDM5ODg1LCJleHAiOjE3OTMwNDE2ODV9.yFhMqzVPvlCrbZWMWIvs29blBJyGxi1YfAhPr6MhYlY",
+    "refreshToken": "849f71d7-5880-4d66-9d40-932f1261e57f",
+    "expiresIn": 1793041685228
+}
+================================================================================
+
+
+======================================== REQUEST ========================================
+[32mpytest tests/test_movies.py::test_update_movies_without_super_admin_creds (setup)[0m
+curl -X POST 'https://api.dev-cinescope.coconutqa.ru/movies' \
+-H 'User-Agent: python-requests/2.34.2' \
+-H 'Accept-Encoding: gzip, deflate' \
+-H 'Accept: application/json' \
+-H 'Connection: keep-alive' \
+-H 'Content-Type: application/json' \
+-H 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImZmZjcyYjhiLTYwNzEtNDZhMy1iNmM1LWJmMmNjNWY3ODcxOCIsImVtYWlsIjoiYXBpMUBnbWFpbC5jb20iLCJyb2xlcyI6WyJVU0VSIiwiQURNSU4iLCJTVVBFUl9BRE1JTiJdLCJ2ZXJpZmllZCI6dHJ1ZSwiaWF0IjoxNzkzMDM5ODg0LCJleHAiOjE3OTMwNDE2ODR9.NBcNMy8aXcO0AkH3GG3Q9CZV_KBTs1ugf7yV3oaDego' \
+-H 'Content-Length: 230' \
+-d '{"name": "Reduce particularly hair", "imageUrl": "https://placekittens.com/672/241", "price": 497, "description": "successful and food bar far certain drive point rule small", "location": "SPB", "published": false, "genreId": 186}' 
+
+
+======================================== RESPONSE ========================================
+	STATUS_CODE: [32m201[0m
+	TIME(ms): 245.26
+	DATA:
+{
+    "id": 79264,
+    "name": "Reduce particularly hair",
+    "price": 497,
+    "description": "successful and food bar far certain drive point rule small",
+    "imageUrl": "https://placekittens.com/672/241",
+    "location": "SPB",
+    "published": false,
+    "rating": 0,
+    "genreId": 186,
+    "createdAt": "2026-10-26T18:38:05.467Z",
+    "genre": {
+        "name": "mouth"
+    }
+}
+================================================================================
+======================================== REQUEST ========================================
+[32mpytest tests/test_movies.py::test_update_movies_without_super_admin_creds[0m
+curl -X GET 'https://api.dev-cinescope.coconutqa.ru/movies/79264' \
+-H 'User-Agent: python-requests/2.34.2' \
+-H 'Accept-Encoding: gzip, deflate' \
+-H 'Accept: application/json' \
+-H 'Connection: keep-alive' \
+-H 'Content-Type: application/json' \
+-H 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjJkMDNjZjFiLTAxNjctNGJlNS04Yzk5LTA5YTFhOTE0N2YxNSIsImVtYWlsIjoidTdiNjdhOWE1Y2EzNDRhNTJAZ21haWwuY29tIiwicm9sZXMiOlsiVVNFUiJdLCJ2ZXJpZmllZCI6dHJ1ZSwiaWF0IjoxNzkzMDM5ODg1LCJleHAiOjE3OTMwNDE2ODV9.yFhMqzVPvlCrbZWMWIvs29blBJyGxi1YfAhPr6MhYlY' \
+
+
+======================================== RESPONSE ========================================
+	STATUS_CODE: [32m200[0m
+	TIME(ms): 144.45
+	DATA:
+{
+    "id": 79264,
+    "name": "Reduce particularly hair",
+    "price": 497,
+    "description": "successful and food bar far certain drive point rule small",
+    "imageUrl": "https://placekittens.com/672/241",
+    "location": "SPB",
+    "published": false,
+    "rating": 0,
+    "genreId": 186,
+    "createdAt": "2026-10-26T18:38:05.467Z",
+    "reviews": [],
+    "genre": {
+        "name": "mouth"
+    }
+}
+================================================================================
+
+
+======================================== REQUEST ========================================
+[32mpytest tests/test_movies.py::test_update_movies_without_super_admin_creds[0m
+curl -X PATCH 'https://api.dev-cinescope.coconutqa.ru/movies/79264' \
+-H 'User-Agent: python-requests/2.34.2' \
+-H 'Accept-Encoding: gzip, deflate' \
+-H 'Accept: application/json' \
+-H 'Connection: keep-alive' \
+-H 'Content-Type: application/json' \
+-H 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjJkMDNjZjFiLTAxNjctNGJlNS04Yzk5LTA5YTFhOTE0N2YxNSIsImVtYWlsIjoidTdiNjdhOWE1Y2EzNDRhNTJAZ21haWwuY29tIiwicm9sZXMiOlsiVVNFUiJdLCJ2ZXJpZmllZCI6dHJ1ZSwiaWF0IjoxNzkzMDM5ODg1LCJleHAiOjE3OTMwNDE2ODV9.yFhMqzVPvlCrbZWMWIvs29blBJyGxi1YfAhPr6MhYlY' \
+-H 'Content-Length: 219' \
+-d '{"name": "Various mind help", "imageUrl": "https://picsum.photos/870/92", "price": 676, "description": "wait statement everyone off economic door into fall cup guy", "location": "MSK", "published": true, "genreId": 186}' 
+
+
+======================================== RESPONSE ========================================
+	STATUS_CODE: [31m403[0m
+	TIME(ms): 44.92
+	DATA: [31m{
+    "message": "Forbidden resource",
+    "error": "Forbidden",
+    "statusCode": 403
+}[0m
+================================================================================

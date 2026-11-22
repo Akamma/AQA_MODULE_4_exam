@@ -1,0 +1,173 @@
+======================================== REQUEST ========================================
+[32mpytest tests/test_movies.py::test_get_movies_with_filter[SPB][0m
+curl -X GET 'https://api.dev-cinescope.coconutqa.ru/movies?minPrice=400&maxPrice=700&locations=SPB&genreId=186' \
+-H 'User-Agent: python-requests/2.34.2' \
+-H 'Accept-Encoding: gzip, deflate' \
+-H 'Accept: application/json' \
+-H 'Connection: keep-alive' \
+-H 'Content-Type: application/json' \
+
+
+======================================== RESPONSE ========================================
+	STATUS_CODE: [32m200[0m
+	TIME(ms): 162.71
+	DATA:
+{
+    "movies": [
+        {
+            "id": 24139,
+            "name": "Тестовый фильм 7090",
+            "description": "Описание тестового фильма",
+            "genreId": 186,
+            "imageUrl": "https://example.com/image.png",
+            "price": 436,
+            "rating": 0,
+            "location": "SPB",
+            "published": true,
+            "createdAt": "2026-03-25T15:49:22.795Z",
+            "genre": {
+                "name": "mouth"
+            }
+        },
+        {
+            "id": 25150,
+            "name": "Тестовый фильм 9668",
+            "description": "Описание тестового фильма",
+            "genreId": 186,
+            "imageUrl": "https://example.com/image.png",
+            "price": 439,
+            "rating": 0,
+            "location": "SPB",
+            "published": true,
+            "createdAt": "2026-03-27T18:33:32.260Z",
+            "genre": {
+                "name": "mouth"
+            }
+        },
+        {
+            "id": 25303,
+            "name": "Тестовый фильм 0f88502d",
+            "description": "Описание тестового фильма",
+            "genreId": 186,
+            "imageUrl": "https://example.com/image.png",
+            "price": 484,
+            "rating": 0,
+            "location": "SPB",
+            "published": true,
+            "createdAt": "2026-03-27T19:26:02.527Z",
+            "genre": {
+                "name": "mouth"
+            }
+        },
+        {
+            "id": 25461,
+            "name": "Тестовый фильм 0b808ae0",
+            "description": "Описание тестового фильма",
+            "genreId": 186,
+            "imageUrl": "https://example.com/image.png",
+            "price": 421,
+            "rating": 0,
+            "location": "SPB",
+            "published": true,
+            "createdAt": "2026-03-28T13:42:39.525Z",
+            "genre": {
+                "name": "mouth"
+            }
+        },
+        {
+            "id": 64624,
+            "name": "UI Test Film Dana Steele",
+            "description": "Тестовое описание",
+            "genreId": 186,
+            "imageUrl": "https://example.com/img.jpg",
+            "price": 500,
+            "rating": 0,
+            "location": "SPB",
+            "published": true,
+            "createdAt": "2026-07-24T15:35:33.946Z",
+            "genre": {
+                "name": "mouth"
+            }
+        },
+        {
+            "id": 66482,
+            "name": "UI Test Film Stephanie Arias",
+            "description": "Тестовое описание",
+            "genreId": 186,
+            "imageUrl": "https://example.com/img.jpg",
+            "price": 500,
+            "rating": 0,
+            "location": "SPB",
+            "published": true,
+            "createdAt": "2026-08-03T16:28:43.186Z",
+            "genre": {
+                "name": "mouth"
+            }
+        },
+        {
+            "id": 69543,
+            "name": "UI Test Film John Cox",
+            "description": "Тестовое описание",
+            "genreId": 186,
+            "imageUrl": "https://example.com/img.jpg",
+            "price": 500,
+            "rating": 0,
+            "location": "SPB",
+            "published": true,
+            "createdAt": "2026-08-13T20:22:09.844Z",
+            "genre": {
+                "name": "mouth"
+            }
+        },
+        {
+            "id": 69544,
+            "name": "UI Test Film Sarah Williams",
+            "description": "Тестовое описание",
+            "genreId": 186,
+            "imageUrl": "https://example.com/img.jpg",
+            "price": 500,
+            "rating": 0,
+            "location": "SPB",
+            "published": true,
+            "createdAt": "2026-08-13T20:39:02.345Z",
+            "genre": {
+                "name": "mouth"
+            }
+        },
+        {
+            "id": 69552,
+            "name": "UI Test Film Christopher Duran",
+            "description": "Тестовое описание",
+            "genreId": 186,
+            "imageUrl": "https://example.com/img.jpg",
+            "price": 500,
+            "rating": 0,
+            "location": "SPB",
+            "published": true,
+            "createdAt": "2026-08-13T20:41:20.532Z",
+            "genre": {
+                "name": "mouth"
+            }
+        },
+        {
+            "id": 69572,
+            "name": "UI Test Film Kyle Fleming",
+            "description": "Тестовое описание",
+            "genreId": 186,
+            "imageUrl": "https://example.com/img.jpg",
+            "price": 500,
+            "rating": 0,
+            "location": "SPB",
+            "published": true,
+            "createdAt": "2026-08-13T21:17:10.897Z",
+            "genre": {
+                "name": "mouth"
+            }
+        }
+    ],
+    "count": 125,
+    "page": 1,
+    "pageSize": 10,
+    "pageCount": 13
+}
+================================================================================

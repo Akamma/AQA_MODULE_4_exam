@@ -1,0 +1,173 @@
+======================================== REQUEST ========================================
+[32mpytest tests/test_movies.py::test_get_movies_with_filter_max_price[0m
+curl -X GET 'https://api.dev-cinescope.coconutqa.ru/movies?maxPrice=669' \
+-H 'User-Agent: python-requests/2.34.2' \
+-H 'Accept-Encoding: gzip, deflate' \
+-H 'Accept: application/json' \
+-H 'Connection: keep-alive' \
+-H 'Content-Type: application/json' \
+
+
+======================================== RESPONSE ========================================
+	STATUS_CODE: [32m200[0m
+	TIME(ms): 242.3
+	DATA:
+{
+    "movies": [
+        {
+            "id": 836,
+            "name": "Виртуальная и многозадачная возможность",
+            "description": "Означать тюрьма тута магазин адвокат. Задержать песенка порядок чувство легко бок.",
+            "genreId": 7,
+            "imageUrl": "https://www.oao.biz/",
+            "price": 468,
+            "rating": 0,
+            "location": "SPB",
+            "published": true,
+            "createdAt": "2025-05-22T15:40:55.013Z",
+            "genre": {
+                "name": "Мюзикл"
+            }
+        },
+        {
+            "id": 1026,
+            "name": "Say.",
+            "description": "Return join himself quickly rate support ask society. Free property ok. Course no purpose ago address myself. Project institution strategy.\nTerm condition child no. Time section different drug full.",
+            "genreId": 8,
+            "imageUrl": "https://placekitten.com/450/543",
+            "price": 276,
+            "rating": 0,
+            "location": "SPB",
+            "published": true,
+            "createdAt": "2025-05-24T04:28:23.404Z",
+            "genre": {
+                "name": "Фэнтези"
+            }
+        },
+        {
+            "id": 1095,
+            "name": "Theory apply.",
+            "description": "Charge news mention eat computer show. Government imagine lose interest attack loss. Product painting accept best sister continue.\nBlood operation look seek growth. President fill you north do.",
+            "genreId": 7,
+            "imageUrl": "https://placekitten.com/808/445",
+            "price": 170,
+            "rating": 0,
+            "location": "SPB",
+            "published": true,
+            "createdAt": "2025-05-26T11:22:29.489Z",
+            "genre": {
+                "name": "Мюзикл"
+            }
+        },
+        {
+            "id": 1308,
+            "name": "The last Geochemist",
+            "description": "Film The last Geochemist description",
+            "genreId": 7,
+            "imageUrl": null,
+            "price": 478,
+            "rating": 0,
+            "location": "SPB",
+            "published": true,
+            "createdAt": "2025-05-27T17:18:16.876Z",
+            "genre": {
+                "name": "Мюзикл"
+            }
+        },
+        {
+            "id": 1318,
+            "name": "Yes small.",
+            "description": "Wrong eight last also early maybe. Effect yard rock agreement.\nFight work adult area explain. Else agent determine stuff model mention responsibility most.",
+            "genreId": 9,
+            "imageUrl": "https://placekitten.com/534/831",
+            "price": 590,
+            "rating": 0,
+            "location": "SPB",
+            "published": true,
+            "createdAt": "2025-05-27T17:29:59.076Z",
+            "genre": {
+                "name": "Анимация"
+            }
+        },
+        {
+            "id": 1357,
+            "name": "Century entire.",
+            "description": "Everything same one several write. Really heart well stay. Result deep save truth feeling knowledge.\nTreatment note usually away gun three.",
+            "genreId": 10,
+            "imageUrl": "https://placekitten.com/947/536",
+            "price": 214,
+            "rating": 0,
+            "location": "SPB",
+            "published": true,
+            "createdAt": "2025-05-27T19:12:00.900Z",
+            "genre": {
+                "name": "Военный"
+            }
+        },
+        {
+            "id": 1533,
+            "name": "Фильм yfktjvgnls",
+            "description": "Описание sayspmbocamxuacvfsenwnnjgafarz",
+            "genreId": 8,
+            "imageUrl": "https://www.hardy.com/wp-contentpost.asp",
+            "price": 133,
+            "rating": 0,
+            "location": "SPB",
+            "published": true,
+            "createdAt": "2025-05-28T12:17:14.118Z",
+            "genre": {
+                "name": "Фэнтези"
+            }
+        },
+        {
+            "id": 1560,
+            "name": "Фильм rzugqwuida",
+            "description": "Описание lphnftrvgxdpqqartqgnahrcqqgjda",
+            "genreId": 10,
+            "imageUrl": "https://ramirez-campos.biz/wp-contentauthor.html",
+            "price": 336,
+            "rating": 5,
+            "location": "SPB",
+            "published": true,
+            "createdAt": "2025-05-28T12:39:48.295Z",
+            "genre": {
+                "name": "Военный"
+            }
+        },
+        {
+            "id": 1576,
+            "name": "College fact contain draw.",
+            "description": "Collection true or ball reflect. Worry central land.\nDoctor several east network TV. Man animal firm center security. Catch enjoy entire its another.",
+            "genreId": 10,
+            "imageUrl": "https://placekitten.com/116/679",
+            "price": 192,
+            "rating": 7,
+            "location": "SPB",
+            "published": true,
+            "createdAt": "2025-05-28T15:01:44.354Z",
+            "genre": {
+                "name": "Военный"
+            }
+        },
+        {
+            "id": 1721,
+            "name": "Eddie",
+            "description": "Описание фильма",
+            "genreId": 9,
+            "imageUrl": "https://example.com/image.png",
+            "price": 28,
+            "rating": 0,
+            "location": "SPB",
+            "published": true,
+            "createdAt": "2025-05-29T07:18:41.697Z",
+            "genre": {
+                "name": "Анимация"
+            }
+        }
+    ],
+    "count": 2277,
+    "page": 1,
+    "pageSize": 10,
+    "pageCount": 228
+}
+================================================================================

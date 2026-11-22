@@ -1,0 +1,61 @@
+======================================== REQUEST ========================================
+[32mpytest tests/test_users.py::TestUser::test_create_user (setup)[0m
+curl -X POST 'https://auth.dev-cinescope.coconutqa.ru/login' \
+-H 'User-Agent: python-requests/2.34.2' \
+-H 'Accept-Encoding: gzip, deflate' \
+-H 'Accept: application/json' \
+-H 'Connection: keep-alive' \
+-H 'Content-Type: application/json' \
+-H 'Content-Length: 53' \
+-d '{"email": "api1@gmail.com", "password": "asdqwe123Q"}' 
+
+
+======================================== RESPONSE ========================================
+	STATUS_CODE: [32m201[0m
+	TIME(ms): 393.92
+	DATA:
+{
+    "user": {
+        "id": "fff72b8b-6071-46a3-b6c5-bf2cc5f78718",
+        "email": "api1@gmail.com",
+        "fullName": "Donald Diaz",
+        "roles": [
+            "USER",
+            "ADMIN",
+            "SUPER_ADMIN"
+        ]
+    },
+    "accessToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImZmZjcyYjhiLTYwNzEtNDZhMy1iNmM1LWJmMmNjNWY3ODcxOCIsImVtYWlsIjoiYXBpMUBnbWFpbC5jb20iLCJyb2xlcyI6WyJVU0VSIiwiQURNSU4iLCJTVVBFUl9BRE1JTiJdLCJ2ZXJpZmllZCI6dHJ1ZSwiaWF0IjoxNzkzMDM5ODg3LCJleHAiOjE3OTMwNDE2ODd9.-9OK5kzQouyitgXmxMZwteJsE5Hs7Cw3R--dmgle59g",
+    "refreshToken": "3182349a-c0d0-4f45-8f75-7545a7675c7b",
+    "expiresIn": 1793041687432
+}
+================================================================================
+======================================== REQUEST ========================================
+[32mpytest tests/test_users.py::TestUser::test_create_user[0m
+curl -X POST 'https://auth.dev-cinescope.coconutqa.ru/user' \
+-H 'User-Agent: python-requests/2.34.2' \
+-H 'Accept-Encoding: gzip, deflate' \
+-H 'Accept: application/json' \
+-H 'Connection: keep-alive' \
+-H 'Content-Type: application/json' \
+-H 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImZmZjcyYjhiLTYwNzEtNDZhMy1iNmM1LWJmMmNjNWY3ODcxOCIsImVtYWlsIjoiYXBpMUBnbWFpbC5jb20iLCJyb2xlcyI6WyJVU0VSIiwiQURNSU4iLCJTVVBFUl9BRE1JTiJdLCJ2ZXJpZmllZCI6dHJ1ZSwiaWF0IjoxNzkzMDM5ODg3LCJleHAiOjE3OTMwNDE2ODd9.-9OK5kzQouyitgXmxMZwteJsE5Hs7Cw3R--dmgle59g' \
+-H 'Cookie: refresh_token=3182349a-c0d0-4f45-8f75-7545a7675c7b' \
+-H 'Content-Length: 179' \
+-d '{"email": "udbe56f16c6374dee@gmail.com", "fullName": "Jason Klein", "password": "1CsLfp6oV2", "passwordRepeat": "1CsLfp6oV2", "roles": ["USER"], "verified": true, "banned": false}' 
+
+
+======================================== RESPONSE ========================================
+	STATUS_CODE: [32m201[0m
+	TIME(ms): 197.73
+	DATA:
+{
+    "id": "07507765-fc64-4cbb-8fbc-083178ecc1f2",
+    "email": "udbe56f16c6374dee@gmail.com",
+    "fullName": "Jason Klein",
+    "verified": true,
+    "roles": [
+        "USER"
+    ],
+    "createdAt": "2026-10-26T18:38:07.716Z"
+}
+================================================================================
