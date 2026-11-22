@@ -9,7 +9,7 @@ import pytest
 @allure.feature("Отзыв")
 @pytest.mark.ui
 class TestReview:
-    @allure.title("Успешный вход в систему для нового пользователя")
+    @allure.title("Успешное создание отзыва")
     def test_review_ui(self, login_page, page):
         with allure.step("Регистрация пользователя"):
             email = f"aqatest{randint(1, 999999)}@email.qa"
