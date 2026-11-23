@@ -270,7 +270,6 @@ def register_page(page: Page) -> CinescopeRegisterPage:
 @pytest.fixture
 def login_page(page: Page) -> CinescopeLoginPage:
     login_page = CinescopeLoginPage(page)
-    login_page.open()
     return login_page
 
 

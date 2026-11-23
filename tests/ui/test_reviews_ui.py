@@ -19,11 +19,12 @@ class TestReview:
             register_page.register("Иван Иванов", email, "qwerty123Q")
         with allure.step("Выполнение входа:"):
             login_page.login(email=email, password='qwerty123Q')
-            expect(login_page.page.get_by_text("Вы вошли в аккаунт", exact=True)).to_be_visible()
+            expect(page.get_by_text("Вы вошли в аккаунт", exact=True)).to_be_visible()
         with allure.step("Создание отзыва"):
             review_page = CinescopeReviewPage(page)
-            review_page.created_review()
-            expect(review_page.page.get_by_text("Вы вошли в аккаунт", exact=True)).to_be_visible()
+            review_page.created_review(email)
+            expect(review_page.page.get_by_text("Отзыв успешно создан", exact=True)).to_be_visible()
+            expect(page.get_by_text(f"Отзыв оставлен {email}", exact=True)).to_be_visible()
 
 
 

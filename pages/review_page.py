@@ -12,9 +12,9 @@ class CinescopeReviewPage(BasePage):
     def open(self):
         self.open_url(self.url)
 
-    def created_review(self):
+    def created_review(self, user_email):
         self.click(self.open_movies)
-        self.enter_text(self.review_input, "Отзыв оставлен")
+        self.enter_text(self.review_input, f"Отзыв оставлен {user_email}")
         self.click(self.send_review)
 
 
