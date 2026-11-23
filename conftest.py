@@ -12,6 +12,13 @@ from api_models.base_models import TestUser, RegisterUserResponse
 from sqlalchemy.orm import Session
 from db_requester.db_client import get_db_session
 from db_requester.db_helpers import DBHelper
+import pytest
+from playwright.sync_api import Page
+
+from pages.register_page import CinescopeRegisterPage
+from pages.login_page import CinescopeLoginPage
+
+DEFAULT_UI_TIMEOUT = 30000
 
 @pytest.fixture
 def session():
@@ -234,6 +241,35 @@ def created_movies_data_for_db():
         "created_at" : date.today()
     }
 
+@pytest.fixture(scope="session")  # Браузер запускается один раз для всей сессии
+def browser(playwright):
+    browser = playwright.chromium.launch(headless=False)  # headless=True для CI/CD, headless=False для локальной разработки
+    yield browser  # yield возвращает значение фикстуры, выполнение теста продолжится после yield
+    browser.close()  # Браузер закрывается после завершения всех тестов
 
+@pytest.fixture(scope="function")  # Контекст создается для каждого теста
+def context(browser):
+    context = browser.new_context()
+    context.tracing.start(screenshots=True, snapshots=True, sources=True)  # Трассировка для отладки
+    context.set_default_timeout(DEFAULT_UI_TIMEOUT)  # Установка таймаута по умолчанию
+    yield context  # yield возвращает значение фикстуры, выполнение теста продолжится после yield
+    context.close()  # Контекст закрывается после завершения теста
+
+@pytest.fixture(scope="function")  # Страница создается для каждого теста
+def page(context):
+    page = context.new_page()
+    yield page  # yield возвращает значение фикстуры, выполнение теста продолжится после yield
+    page.close()  # Страница закрывается после завершения теста
+
+@pytest.fixture
+def register_page(page: Page) -> CinescopeRegisterPage:
+    register_page = CinescopeRegisterPage(page)
+    register_page.open()
+    return register_page
+
+@pytest.fixture
+def login_page(page: Page) -> CinescopeLoginPage:
+    login_page = CinescopeLoginPage(page)
+    return login_page
 
 
